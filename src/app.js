@@ -3,11 +3,18 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+const indexRoutes = require('./routes/index.routes')
+const recordsRoutes = require('./routes/records.routes')
+
 app.use(express.static(path.join(__dirname, "public")))
 
-app.get("/", (req, res) => {
-    return res.sendFile(path.join(__dirname, "public", "views", "home.html"));
-})
+
+//configuración del motor de plantillas
+app.set('view engine','ejs');
+app.set('views',path.join(__dirname, 'views'));
+
+app.use("/", indexRoutes )
+app.use("/records",  recordsRoutes)
 
 
 app.listen(port, (req, res) => {
