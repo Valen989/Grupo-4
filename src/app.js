@@ -6,7 +6,7 @@ const port = 3000;
 const indexRoutes = require('./routes/index.routes')
 const recordsRoutes = require('./routes/records.routes')
 
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname,'..', "public")))
 
 
 //configuración del motor de plantillas

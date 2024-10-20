@@ -1,7 +1,70 @@
 @import url(general.css);
 @import url(variables.css);
 
+/*Seccion header*/
+.banner-inclusivamente{
+    display: flex;  /*hacer que los elementos de adentro sean flexibles*/
+    justify-content: center; /*Poner los elementos en el centro*/
+}
 
-.redes{
+.banner-inclusivamente img {
+    margin-left: -20px;
+    width: 300px;
+}
+
+.logo-fundacion{
+    
+    display: flex;
+    justify-content: center;
+    
+}
+
+.logo-fundacion img {
+    width: 120px; /*Todas las imagenes van a tener un ancho de 120px*/
+    margin-top: -50px; /*La imagen va a estar mas arriba*/
+    
+}
+
+.barra-navegacion{
+    display: flex;
+    justify-content: center;
+    gap: 15px; /*Espacio entre los items*/
+    font-size: 20px; /*Aumentar tamaño letra*/
+    padding: 10px /*Espacio arriba y abajo de los items*/
+}
+
+
+/*Tablet*/
+@media (min-width: 768px){
+    .banner-inclusivamente img {
+        margin-left: -430px;
    
+    }
+
+    .logo-fundacion img {
+     margin-left: -420px;
+     width: 90px;
+        
+    }
+
+    .barra-navegacion{
+        font-size: 12px;
+        margin-left: -440px;
+    }
+}
+
+/*Pc*/
+@media (min-width: 1024px){
+    .banner-inclusivamente img {
+        margin-left: 0px;
+        width: 300px;   
+
+    }
+    .logo-fundacion img {
+        margin-left: 0px;
+    }
+    .barra-navegacion{
+        font-size: 18px;
+        margin-left: -30px;
+    }
 }
