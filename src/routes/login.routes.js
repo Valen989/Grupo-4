@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const {admin} = require('../controllers/adminController')
+const {login} = require('../controllers/loginController')
 
 
 //Admin
 router
 
-    .get('/', admin )
-    
+    .get('/', login)
 
 
 

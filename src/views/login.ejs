@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head', {
+        title : "Nosotros"
+    }) %>
+   
+<body>
+    <!--Cabezera-->
+    <%- include('./partials/header') %>
+    <h2>Iniciar sesión</h2>
+        <form>
+          <label>Correo electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="correo123@email.com">
+          <br>
+          <label>Contraseña:</label>
+          <input type="password" id="password" name="password" placeholder="*********">
+          <br>
+          <button>Iniciar sesión</button>
+          <a href="#">Recuperar contraseña</a>
+          <a href="#">Registrarse</a>
+        </form>
+      </div>
+    <%- include('./partials/footer') %>
+</body>
+</html>

@@ -55,9 +55,23 @@
     }
 
     .barra-navegacion{
-        font-size: 12px;
+        background-color: #15B6B8;
+  padding: 10px 0;
+  text-align: center;
         
     }
+
+    .barra-navegacion a {
+        color: #333; 
+        text-decoration: none; 
+        padding: 10px 20px; 
+        margin: 0 10px; 
+        display: inline-block; 
+      }
+
+      .barra-navegacion a:hover {
+        background-color: #ddd; 
+      }
 
     .footer{
         justify-content: space-between;
