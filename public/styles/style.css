@@ -1,17 +1,10 @@
 @import url('./general.css');
 @import url('./variables.css');
 @import url('./home.css');
+@import url('./records.css');
 
 /*Seccion header*/
-.banner-inclusivamente{
-    display: flex;  /*hacer que los elementos de adentro sean flexibles*/
-    justify-content: center; /*Poner los elementos en el centro*/
-}
 
-.banner-inclusivamente img {
-    margin-left: -20px; /*menos espacio a la izquierda*/
-    width: 300px;
-}
 
 .logo-fundacion{
     
@@ -77,10 +70,17 @@
 
 /*Pc*/
 @media (min-width: 1024px){
+    .banner-inclusivamente{
+        width: 100%;
+        overflow: hidden;
+        line-height: 0; /* Elimina cualquier espacio en blanco debajo de la imagen */
+    }
+    
     .banner-inclusivamente img {
-        margin-left: 0px;
-        width: 300px;   
-
+        width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
     }
     .logo-fundacion img {
         margin-left: 0px;
