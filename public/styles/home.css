@@ -1,0 +1,36 @@
+.video-referencia{
+    display: flex;
+}
+
+.video-referencia img{
+    width: 350px;
+}
+
+.imagen-referencia img{
+   margin-left: 80px;
+    width: 200px;
+}
+
+@media (min-width: 768px){
+    .video-referencia img{
+        margin-left: 200px;
+        width: 350px;
+    }
+
+    .imagen-referencia img{
+        margin-left: 280px;
+         width: 200px;
+     }
+}
+
+@media (min-width: 1024px){
+    .video-referencia img{
+        margin-left: 350px;
+        width: 350px;
+    }
+
+    .imagen-referencia img{
+        margin-left: 420px;
+         width: 200px;
+     }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head', {
+        title : "Nosotros"
+    }) %>
+<body>
+    <!--Cabezera-->
+    <%- include('./partials/header') %>
+    <!--Formulario para agregar streams viejos-->
+    <main>
+        <h2>Agregar Transmisiónes anteriores</h2>
+        <div>
+            <form method="POST" action ="/admin">
+                <div>
+            <label for="title">Titulo del stream</label>
+                </div>
+                <div>
+            <input name="title" type="text"  id="title" >
+                </div>
+                <div>
+                    <label for="date">Fecha del stream</label>
+                </div>
+                <div>
+                    <input name="date" type="text" id="date">
+                </div>
+                <div>
+                    <label for="miniature">Agregar miniatura</label>
+                </div>
+                <div>
+                    <input name="miniature" type="file" id="miniature" >
+                </div>
+                <div>
+                    <label for="description">Descripcion-stream</label>
+                </div>
+                <div>
+                    <textarea id="description" name="description" > </textarea>
+                </div>
+                <div>
+                    <label for="img-optional">Agregar imagen a la desripcion</label>
+                </div>
+                <div>
+                    <input name="img-optional" type="file" id="img-optional" >
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

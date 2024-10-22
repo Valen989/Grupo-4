@@ -1,5 +1,6 @@
-@import url(general.css);
-@import url(variables.css);
+@import url('./general.css');
+@import url('./variables.css');
+@import url('./home.css');
 
 /*Seccion header*/
 .banner-inclusivamente{
@@ -8,7 +9,7 @@
 }
 
 .banner-inclusivamente img {
-    margin-left: -20px;
+    margin-left: -20px; /*menos espacio a la izquierda*/
     width: 300px;
 }
 
@@ -33,23 +34,44 @@
     padding: 10px /*Espacio arriba y abajo de los items*/
 }
 
+.footer{
+    display: flex;
+    font-size: 10px;
+}
+
+.redes{
+    display: flex;
+    
+}
+
+.desarrollo-moncholo{
+    margin-right:  -20px;
+}
+
+.fundacion{
+    margin-left: 5px;
+}
 
 /*Tablet*/
 @media (min-width: 768px){
-    .banner-inclusivamente img {
-        margin-left: -430px;
    
-    }
-
     .logo-fundacion img {
-     margin-left: -420px;
+     
      width: 90px;
         
     }
 
     .barra-navegacion{
         font-size: 12px;
-        margin-left: -440px;
+        
+    }
+
+    .footer{
+        justify-content: space-between;
+    }
+
+    .desarrollo-moncholo{
+        margin-right: 70px ;
     }
 }
 
@@ -66,5 +88,9 @@
     .barra-navegacion{
         font-size: 18px;
         margin-left: -30px;
+    }
+
+    .desarrollo-moncholo{
+        margin-right: 5px
     }
 }
