@@ -5,6 +5,15 @@
 
 /*Seccion header*/
 
+.banner-inclusivamente{
+   display: flex;
+}
+
+.banner-inclusivamente img{
+    width: 100%;
+}
+
+
 
 .logo-fundacion{
     
@@ -14,21 +23,33 @@
 }
 
 .logo-fundacion img {
-    width: 120px; /*Todas las imagenes van a tener un ancho de 120px*/
-    margin-top: -50px; /*La imagen va a estar mas arriba*/
+    width: 80px; /*Todas las imagenes van a tener un ancho de 120px*/
+    margin-top: 5px; /*La imagen va a estar mas arriba*/
     
 }
 
 .barra-navegacion{
     display: flex;
     justify-content: center;
-    gap: 15px; /*Espacio entre los items*/
-    font-size: 20px; /*Aumentar tamaño letra*/
-    padding: 10px /*Espacio arriba y abajo de los items*/
+    gap: 20px;
+    font-size: 17px; /*Aumentar tamaño letra*/
+    padding: 10px; /*Espacio arriba y abajo de los items*/
+    background-color: #15B6B8;
+    text-align: center;
+
 }
 
+.barra-navegacion a{
+    color: #333;
+    text-decoration: none; 
+     
+}
+
+
+/*Seccion footer*/
 .footer{
     display: flex;
+    justify-content: center;
     font-size: 10px;
 }
 
@@ -42,69 +63,49 @@
 }
 
 .fundacion{
-    margin-left: 5px;
+    margin-left: 20px;
 }
 
 /*Tablet*/
 @media (min-width: 768px){
+
+/*Header*/
    
-    .logo-fundacion img {
-     
-     width: 90px;
-        
-    }
 
-    .barra-navegacion{
-        background-color: #15B6B8;
-  padding: 10px 0;
-  text-align: center;
-        
-    }
+/*Footer*/
+.footer{
+    gap: 180px;
+}
 
-    .barra-navegacion a {
-        color: #333; 
-        text-decoration: none; 
-        padding: 10px 20px; 
-        margin: 0 10px; 
-        display: inline-block; 
-      }
+.fundacion{
+    margin-left: -20px;
+}
 
-      .barra-navegacion a:hover {
-        background-color: #ddd; 
-      }
+.redes{
+    gap:15px;
+}
 
-    .footer{
-        justify-content: space-between;
-    }
-
-    .desarrollo-moncholo{
-        margin-right: 70px ;
-    }
 }
 
 /*Pc*/
 @media (min-width: 1024px){
-    .banner-inclusivamente{
-        width: 100%;
-        overflow: hidden;
-        line-height: 0; /* Elimina cualquier espacio en blanco debajo de la imagen */
-    }
-    
-    .banner-inclusivamente img {
-        width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-    }
-    .logo-fundacion img {
-        margin-left: 0px;
-    }
-    .barra-navegacion{
-        font-size: 18px;
-        margin-left: -30px;
-    }
+    /*Footer*/
+.footer{
+    font-size: 15px;
+}
 
-    .desarrollo-moncholo{
-        margin-right: 5px
-    }
+.fundacion{
+    margin-left: -400px ;
+}
+
+.desarrollo-moncholo{
+    margin-right: 0px;
+    margin-left: -100px;
+  
+   
+}
+
+.redes{
+    margin-left: 0px;
+}
 }
