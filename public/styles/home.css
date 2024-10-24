@@ -1,20 +1,27 @@
 .video-referencia{
     display: flex;
+    padding: 10px;
 }
 
 .video-referencia img{
-    width: 350px;
+    width: 320px;
+    margin-left: -10px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
 .imagen-referencia img{
    margin-left: 80px;
-    width: 200px;
+    width: 150px;
+}
+
+.titulo-stream{
+    padding: 10px;
 }
 
 @media (min-width: 768px){
     .video-referencia img{
-        margin-left: 200px;
-        width: 350px;
+        margin-left: 100px;
+        width: 600px;
     }
 
     .imagen-referencia img{
@@ -24,9 +31,15 @@
 }
 
 @media (min-width: 1024px){
+    
+    .video-referencia{
+        
+    }
+    
     .video-referencia img{
-        margin-left: 350px;
-        width: 350px;
+        margin-left: 250px;
+        
+       
     }
 
     .imagen-referencia img{
