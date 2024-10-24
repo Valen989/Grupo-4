@@ -1,62 +1,112 @@
+
+
+
+ 
+.Titulo {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
 .images-container {
+  
+  width: 100%;
+  max-width: 370px; /* Ajustado al ancho máximo de la página */
+  padding: 0 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column; /* Cambiamos a columna para mejor visualización */
+  gap: 15px; /* Espacio entre imágenes */
+  margin-bottom: 15px;
+}
+
+.row a {
+  width: 100%;
+  max-width: 350px; 
+  margin: 0 auto;
+}
+
+.row img {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Para hacer el diseño responsive */
+@media (min-width: 768px) {
+  .images-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 600px;
+   /* Ajusta este valor según tus necesidades */
     margin: 0 auto;
-  }
-  
-  .row {
+}
+
+.row {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .row a {
-    width: 32%;
-    display: block;
-  }
-  
-  .row img {
+    flex-wrap: wrap;
+}
+
+.row nav {
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    height: auto;
+}
+
+.row a {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.row img {
+    width: 100%;
+    height: auto; /* Ajusta la altura según tus necesidades */
     object-fit: cover;
-    aspect-ratio: 16 / 9;
-  }
+    border-radius: 10px;
   
-  .row a:hover img {
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+}
   }
-  
-  .barra-nav {
-    background-color: #15B6B8;
-    padding: 10px 0;
-    text-align: center; 
-  }
-  
-  .barra-nav a {
-    color: #333; 
-    text-decoration: none; 
-    padding: 10px 20px; 
-    margin: 0 10px; 
-    display: inline-block; 
-  }
-  
-  .barra-nav a:hover {
-    background-color: #ddd; 
-  }
-  
-  .fundacion-icon {
-    text-align: center;
-  }
-  .banner {
+
+
+@media (min-width: 1024px) {
+  .images-container {
     width: 100%;
-    overflow: hidden;
-    line-height: 0; /* Elimina cualquier espacio en blanco debajo de la imagen */
-  }
-  
-  .banner img {
+    max-width: 1200px; /* Ajusta este valor según tus necesidades */
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row nav {
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    height: auto;
-    display: block;
+}
+
+.row a {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.row img {
+    width: 100%;
+    height: auto; /* Ajusta la altura según tus necesidades */
     object-fit: cover;
-  }
+    border-radius: 10px;
+}
+
+.pagina-grabaciones {
+  background-color: #E2F6F6;
+}
+}
