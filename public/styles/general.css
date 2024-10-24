@@ -1,7 +1,10 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    background-color: var(--color-blanco2);
     
 }
 
+body {
+    background-color: var(--color-blanco2);
+
+}

@@ -4,6 +4,9 @@
 @import url('./records.css');
 @import url('./admin.css');
 @import url('../animations/animations.css');
+@import url('./register.css');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+
 
 /*Seccion header*/
 
@@ -32,21 +35,36 @@
     
 }
 
-.barra-navegacion{
+.barra-navegacion nav {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 17px; /*Aumentar tamaño letra*/
-    padding: 10px; /*Espacio arriba y abajo de los items*/
-    background-color: var(--color-celeste);
-    text-align: center;
+    justify-content: space-around;
+    font-family: "Teko", sans-serif;
+ 
+
+}
+
+.barra-navegacion{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: #15B6B8;
+    padding: 15px 0;
+    
 
 }
 
 .barra-navegacion a{
-    color: #333;
-    text-decoration: none; 
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
      
+}
+
+.barra-navegacion a:hover {
+    background-color: #0E8385;
 }
 
 
@@ -71,7 +89,9 @@
 @media (min-width: 768px){
 
 /*Header*/
-   
+.barra-navegacion a{
+    font-size: 30px;
+}
 
 /*Footer*/
 .footer{
@@ -90,6 +110,13 @@
 
 /*Pc*/
 @media (min-width: 1024px){
+  
+/*Header*/
+
+.barra-navegacion a{
+    font-size: 25px;
+}
+  
     /*Footer*/
 .footer{
     font-size: 15px;

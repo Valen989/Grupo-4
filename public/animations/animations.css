@@ -1,9 +1,9 @@
-.flip-scale-2-hor-top {
+.flip-scale-2-hor-top:hover {
 	-webkit-animation: flip-scale-2-hor-top 1s linear reverse ;
 	        animation: flip-scale-2-hor-top 1s linear reverse ;
 }
 
-.rotate-scale-up {
+.rotate-scale-up:hover {
 	-webkit-animation: rotate-scale-up 1s linear both;
 	        animation: rotate-scale-up 1s linear both;
 }
@@ -40,7 +40,7 @@
               transform-origin: 50% 100%;
     }
   }
-  @keyframes flip-scale-2-hor-top {
+  @keyframes flip-scale-2-hor-top{
     0% {
       -webkit-transform: translateY(0) rotateX(0) scale(1);
               transform: translateY(0) rotateX(0) scale(1);
