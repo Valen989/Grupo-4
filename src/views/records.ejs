@@ -7,21 +7,28 @@
     <!--Cabezera-->
     <%- include('./partials/header') %>
     <main>
-        <h1 class="Titulo">Grabaciones</h1>
+        
+        <section>
+            <h2>Proximo vivo....</h2>
+            <img src="" alt="">
+        </section>
+        <section >
+            <h2 class="Titulo">Grabaciones anteriores</h2>
+          <div class="images-container">
+            <article>
+                <iframe width="100%" height="200px" src="https://www.youtube.com/embed/ilMbw2pykoY?si=d5xHB4u76J_8MypT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </article>
+            <article>
+              <iframe width="100%" height="200px" src="https://www.youtube.com/embed/zlKmG9lNDZQ?si=hK5MiAhakq0OkE6u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </article>
+          <article>
+              <iframe width="100%" height="200px" src="https://www.youtube.com/embed/9e1-mBm3gYA?si=FFoGl42axhBlDuIW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </article>
+          </div>
+         
+      </section>
     </main>
-    <div class="images-container">
-        <div class="row">
-          <nav>
-          <a href="/"><img src="/images/fotoProximoVideo.jpg" alt="Descripción 1"></a>
-          <a href="url_del_video_2"><img src="/images/fotoEjemplo.jpg" alt="Descripción 2"></a>
-          <a href="url_del_video_3"><img src="/images/fotoEjemplo.jpg" alt="Descripción 3"></a>
-          <a href="url_del_video_4"><img src="/images/fotoEjemplo.jpg" alt="Descripción 4"></a>
-          <a href="url_del_video_5"><img src="/images/fotoEjemplo.jpg" alt="Descripción 5"></a>
-        <a href="url_del_video_6"><img src="/images/fotoEjemplo.jpg" alt="Descripción 6"></a>
-        </nav> 
-        <span></span>
-        </div>
-    </div>
+   
       
     <%- include('./partials/footer') %>
 </body>
