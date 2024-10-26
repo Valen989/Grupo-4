@@ -1,6 +1,14 @@
 
 
 
+.Titulo2{
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+
  
 .Titulo {
   text-align: center;
@@ -23,12 +31,35 @@
 .images-container article {
 border: 2px solid var(--color-celeste);
 padding: 10px;
+
+}
+ 
+.images-container-prox {
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-
+.images-container-prox article {
+  border: 2px  solid var(--color-celeste);
+  padding: 7px;
+}
 
 /* Para hacer el diseño responsive */
 @media (min-width: 768px) {
+.images-container-prox{
+  flex-direction: row;
+  margin: 0 auto;
+  width: 700px;
+  justify-content: space-between;
+}
+.images-container-prox article {
+  width: 320px;
+
+}
   .images-container {
    /* Ajusta este valor según tus necesidades */
     flex-direction: row;
@@ -47,6 +78,16 @@ padding: 10px;
 
 
 @media (min-width: 1024px) {
+
+  .images-container-prox {
+    width: 100%;
+    max-width: 1200px; /* Ajusta este valor según tus necesidades */
+    margin: 0 auto;
+
+  }
+  .images-container-prox article {
+    width: 0 auto;
+  }
   .images-container {
     width: 100%;
     max-width: 1200px; /* Ajusta este valor según tus necesidades */
@@ -54,7 +95,7 @@ padding: 10px;
 }
 
 .images-container article {
-  width: 380px;
+  width: 0 auto;
 }
 
 .pagina-grabaciones {
