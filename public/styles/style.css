@@ -16,16 +16,15 @@
 }
 
 .banner-inclusivamente img{
-    width: 80%;
-    height: 350px;
-    margin-top: 30px;
-    margin-left: 130px;
-    margin-bottom: -60px;
-    padding-bottom: 100px;
-
+    width: 300px;
+    margin-left: 10px; 
+   height: 160px; 
+   margin: 2px;
 }
 
-
+main {
+    margin-bottom: 60px;
+}
 
 .logo-fundacion{
     display: flex;
@@ -34,10 +33,12 @@
 }
 
 .logo-fundacion img {
-    width: 150px;
-  margin-bottom: 40px;
+    width: 130px;
+  
 
 }
+.pagina-grabaciones {
+margin: 0;}
 
     
 
@@ -46,6 +47,7 @@
     display: flex;
     justify-content: space-around;
     font-family: "Teko", sans-serif;
+   
  
 
 }
@@ -53,12 +55,14 @@
 .barra-navegacion{
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 100%;
+    width: 100vw;
     background-color: #15B6B8;
     padding: 15px 0;
     
+    
 
 }
+
 
 .barra-navegacion a{
     color: white;
@@ -76,33 +80,69 @@
 
 
 /*Seccion footer*/
-.footer{
+.footer {
+    width: 320px;
+    height: 100px;
+    background-color: #FAFAFA;
+    border-top: 1px solid #ccc;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+}
+
+.redes {
     display: flex;
     justify-content: center;
-    font-size: 10px;
- 
+    gap: 30px;
+    font-size: 24px;
+}
+.fa-square-facebook:before {
+ color: #3b5998;
+}
+.fa-youtube:before {
+ color: #FF0000;
+}
+.fa-instagram:before{
+ color: #FF69B4;
 }
 
-.redes{
+.fundacion {
     display: flex;
-    margin-left: 15%;
-    margin-right: 15%;
+    justify-content: center;
+    margin-top: 5px;
+}
+.desarrollo-moncholo{
+
     
 }
-
-
-
 /*Tablet*/
 @media (min-width: 768px){
 
-/*Header*/
+.banner-inclusivamente img {
+ 
+    width: 90%;
+    margin-left: 30px;
+    height: 300px;
+    margin-bottom: -30px;
+
+}
+
+    .logo-fundacion img {
+        width: 180px;
+        margin-bottom: 20px;
+}
+
+
 .barra-navegacion a{
     font-size: 30px;
 }
 
 /*Footer*/
 .footer{
-    gap: 180px;
+    
 }
 
 .fundacion{
@@ -117,7 +157,18 @@
 
 /*Pc*/
 @media (min-width: 1024px){
-  
+.logo-fundacion img {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+.banner-inclusivamente img {
+    width: 90%;
+    height: 300px;
+    margin-top: 30px;
+    padding-left: 30px;
+
+}
 /*Header*/
 
 .barra-navegacion a{
