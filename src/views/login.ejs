@@ -4,10 +4,10 @@
         title : "Nosotros"
     }) %>
    
-<body>
-    <!--Cabezera-->
-    <%- include('./partials/header') %>
-    <h2>Iniciar sesión</h2>
+<body class="login-body">
+    <div class="container-login">
+      <img class="Logo-Inclusivamente" src="/images/banner.png" alt="InclusivaMente">
+    <h2 class="login-tittle">Iniciar sesión</h2>
         <form>
           <label>Correo electrónico:</label>
           <input type="email" id="email" name="email" placeholder="correo123@email.com">
@@ -15,11 +15,9 @@
           <label>Contraseña:</label>
           <input type="password" id="password" name="password" placeholder="*********">
           <br>
-          <button>Iniciar sesión</button>
-          <a href="#">Recuperar contraseña</a>
-          <a href="#">Registrarse</a>
+          <button class="button">Iniciar sesión</button>
+          <a class="olvidaste" href="#">¿Olvidaste tu contraseña?</a>
         </form>
       </div>
-    <%- include('./partials/footer') %>
 </body>
 </html>
