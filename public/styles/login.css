@@ -65,16 +65,17 @@ input {
 }
 
 .button {
-    background-color: #15B6B8;
+    background-color: var(--color-celeste);
     color: white;
     padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Añadimos la transición */
 }
 
-button:hover {
-    background-color: #15B6B8;
+.button:hover {
+    background-color: var(--color-azul);
 }
 
 @media (min-width: 768px){
