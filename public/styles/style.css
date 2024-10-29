@@ -10,6 +10,7 @@
 
 /*Seccion header*/
 
+
 .banner-inclusivamente{
    display: flex;
    
@@ -41,6 +42,19 @@ main {
 margin: 0;}
 
     
+.login-container {
+    display: flex;
+    justify-content: right;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.login-icons {
+    width: 24px; 
+    height: 24px;
+    cursor: pointer;
+    
+}
 
 
 .barra-navegacion nav {
@@ -192,7 +206,17 @@ margin: 0;}
 .barra-navegacion a{
     font-size: 25px;
 }
-  
+.login-container{
+    display: flex;
+    justify-content: right;
+    margin-right: 30px;
+    margin-top: 5px;
+}
+.login-icons{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+
     /*Footer*/
     .footer-entero {
         flex-direction: row;
@@ -216,7 +240,6 @@ margin: 0;}
     }
 }
 
-.redes{
+
     
-}
-}
+
