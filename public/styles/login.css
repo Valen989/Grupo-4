@@ -10,7 +10,24 @@
     height: 100vh;
     margin: 0;
 }
+.back-container {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    z-index: 1000;
+}
 
+.fa-arrow-left-long {
+    font-size: 24px;
+    color: var(--color-celeste); /* Usa el color celeste principal */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fa-arrow-left-long:hover {
+    color: var(--color-azul); /* Cambia a azul al pasar el mouse */
+    transform: translateX(-5px); /* Efecto de movimiento al hover */
+}
 
 .Logo-Inclusivamente {
     width: 226px;
@@ -61,6 +78,12 @@ button:hover {
 }
 
 @media (min-width: 768px){
+    .back-container {
+        position: absolute;
+    top: 50px;
+    left: 20px;
+    z-index: 1000;
+    }
 .Logo-Inclusivamente {
     width: 350px;
     height: 200px;
@@ -73,6 +96,18 @@ button:hover {
 }
 
 @media (min-width:  1024px){
+    .back-container{
+        position: absolute;
+    top: 30px;
+    left: 40px;
+    z-index: 1000;
+    }
+    .login-container{
+        display: flex;
+        justify-content: right;
+        margin-right: 50px;
+        margin-top: 5px;
+    }
 .Logo-Inclusivamente{
 height: 150px;
 margin: 10px;
