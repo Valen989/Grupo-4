@@ -85,11 +85,9 @@ margin: 0;}
     padding: 8px 16px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-     
+     font-size: 20px;
 }
-.barra-navegacion a{
-    font-size: 20px;
-}
+
 
 
 .barra-navegacion a:hover {
