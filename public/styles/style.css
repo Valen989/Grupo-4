@@ -87,6 +87,10 @@ margin: 0;}
     transition: background-color 0.3s ease;
      
 }
+.barra-navegacion a{
+    font-size: 20px;
+}
+
 
 .barra-navegacion a:hover {
     background-color: #0E8385;
@@ -177,10 +181,6 @@ margin: 0;}
         margin-left: 10px;
         margin-right: 10px;
 }
-}
-
-.barra-navegacion a{
-    font-size: 30px;
 }
 
 
