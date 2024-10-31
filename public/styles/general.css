@@ -4,6 +4,10 @@
 }
 
 body {
-    background-color: var(--color-blanco2);
-
+    background-color: #8ADBDB;
+    background-image: url('/images/fondoBODY.png');
+    background-size: cover; /* Otras opciones: contain, 100% 100%, auto */
+    background-position: center; /* Otras opciones: top, bottom, left, right */
+    background-repeat: no-repeat; /* Otras opciones: repeat, repeat-x, repeat-y */
+    background-attachment: fixed; /* Hace que la imagen permanezca fija al hacer scroll */
 }
