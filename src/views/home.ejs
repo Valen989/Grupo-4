@@ -3,18 +3,21 @@
     <%- include('./partials/head', {
         title : "Home"
     }) %>
-<body>
+<body class="body-home">
     <!--Cabezera-->
     <%- include('./partials/header') %>
     <main>
         <!--Stream-->
+        <div class="stream-en-vivo">
+        <h2>STREAM EN VIVO</h3>
+        </div>
         <div class="video-referencia">
-            <img src="/images/referencia_video.png" alt="video_referencia">
+            <img src="/images/referencia_video.png" alt="video_referencia" class="scale-up-center" >
         </div>
        <!--Seccion info del stream-->
        <div class="agregado-stream">
         <div class="titulo-stream">
-        <h3>Inclusivamente 18/10 Los campeones de la vida!!! </h3>
+        <h2>Inclusivamente 18/10 Los campeones de la vida!!! </h3>
     </div>
     <div class="descripcion-stream">
         <p>
@@ -25,7 +28,7 @@ Te va a encantar!
         </p>
     </div>
     <div class="imagen-referencia">
-        <img src="/images/Imagen_del_caso_utv_1_objetivo.png" />
+        <img src="/images/Imagen_del_caso_utv_1_objetivo.png"  />
     </div>
        </div>
     </main>
