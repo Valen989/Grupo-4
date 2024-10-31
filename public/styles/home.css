@@ -1,3 +1,17 @@
+.body-home{
+    margin:0%;
+}
+
+/*Stream en vivo*/
+
+.stream-en-vivo{
+    justify-content: center;
+    margin-left: 50px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+
+/*Imagen de video*/
 .video-referencia{
     display: flex;
     padding: 10px;
@@ -16,14 +30,31 @@
 
 .titulo-stream{
     padding: 10px;
+    font-family: "Teko", sans-serif;
+}
+
+.descripcion-stream{
+    font-family: "DM Sans", sans-serif;
 }
 
 @media (min-width: 768px){
+    /*Stream en vivo*/
+
+    .stream-en-vivo{
+        margin-left: 280px;
+    }
+    
+    /*Imagen de video*/
     .video-referencia img{
-        margin-left: 100px;
+        margin-left: 70px;
         width: 600px;
     }
+    /*Titulo stream*/
 
+
+
+
+/*Imagen agregado*/
     .imagen-referencia img{
         margin-left: 280px;
          width: 200px;
@@ -31,19 +62,35 @@
 }
 
 @media (min-width: 1024px){
-    
-    .video-referencia{
-        
+     /*Stream en vivo*/
+
+     .stream-en-vivo{
+        font-size: 40px;
+        margin-left: 470px;
     }
+
     
+ /*Imagen de video*/
+
     .video-referencia img{
-        margin-left: 250px;
-        
+        margin-left: 390px;
+        width: 700px;
        
     }
 
+/*Titulo stream*/
+.titulo-stream{
+    font-size: 25px;
+}
+
+/*Descripcion stream*/
+.descripcion-stream{
+    font-size: 30px;
+}
+
+/*Imagen agregado*/
     .imagen-referencia img{
-        margin-left: 420px;
+        margin-left: 650px;
          width: 200px;
      }
 }
