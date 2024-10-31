@@ -1,16 +1,17 @@
 module.exports = {
     list : (req,res) => {
-        return res.render('records/list')
+        return res.render('radios/list')
     },
     add : (req,res) => {
-        return res.render('records/add')
+        return res.render('radios/add')
+
     },
     create : (req,res) => {
         return res.send(req.body)
 
     },
     edit : (req,res) => {
-        return res.render('records/edit')
+        return res.render('radios/edit')
 
     },
     update : (req,res) => {
