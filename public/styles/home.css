@@ -37,6 +37,12 @@
     font-family: "DM Sans", sans-serif;
 }
 
+.agregado-stream{
+    background-color: var(--color-celeste2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 @media (min-width: 768px){
     /*Stream en vivo*/
 
