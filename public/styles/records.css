@@ -5,6 +5,7 @@
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
+  color: var(--color-blanco);
 
 }
 
@@ -14,6 +15,7 @@
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
+  color: var(--color-blanco);
 
 }
 
@@ -29,9 +31,9 @@
 }
 
 .images-container article {
-border: 2px solid var(--color-celeste);
-padding: 10px;
-
+  border: 10px double var(--color-blanco);
+  border-radius: 20px;
+  padding: 7px;
 }
  
 .images-container-prox {
@@ -44,11 +46,12 @@ padding: 10px;
 }
 
 .images-container-prox article {
-  border: 2px  solid var(--color-celeste);
+  border: 10px double var(--color-blanco);
+  border-radius: 20px;
   padding: 7px;
 }
 
-/* Para hacer el diseño responsive */
+
 @media (min-width: 768px) {
 .images-container-prox{
   flex-direction: row;
@@ -61,7 +64,6 @@ padding: 10px;
 
 }
   .images-container {
-   /* Ajusta este valor según tus necesidades */
     flex-direction: row;
     margin: 0 auto;
     width: 700px;

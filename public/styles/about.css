@@ -1,0 +1,9 @@
+.pagina-about {
+    margin: 0;
+}
+
+.div-about {
+    background-color: var(--color-blanco);
+    border-radius: 20px;
+    margin: 20px;
+}

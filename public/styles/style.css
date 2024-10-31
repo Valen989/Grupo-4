@@ -6,6 +6,7 @@
 @import url('../animations/animations.css');
 @import url('./register.css');
 @import url('./login.css');
+@import url('./about.css');
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 
 /*Seccion header*/
@@ -128,10 +129,12 @@ margin: 0;}
     display: flex;
     justify-content: center;
     margin-top: 5px;
+    color: var(--color-blanco);
 }
 .desarrollo-moncholo {
     display: flex;
     justify-content: center;
+    color: var(--color-blanco);
 }
 /*Tablet*/
 @media (min-width: 768px){
