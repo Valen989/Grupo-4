@@ -5,14 +5,18 @@ const radios = getData("radios.json");
 
 module.exports = {
     list : (req,res) => {
-        return res.render('radios/list')
+        return res.render("radios", {
+             radios,
+             
+        });
+        
     },
     add : (req,res) => {
         return res.render('radios/add')
 
     },
     create : (req,res) => {
-        create: (req, res) => {
+       
             const errors = validationResult(req);
         
             if(errors.isEmpty()){
@@ -38,9 +42,6 @@ module.exports = {
             }
             return res.send(req.body)
           },
-        
-
-    },
     edit : (req,res) => {
         return res.render('radios/edit')
 
@@ -54,6 +55,7 @@ module.exports = {
 
     }
 }
+
 
 
 
