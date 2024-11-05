@@ -13,7 +13,7 @@
     <div class="container-login">
       <img class="Logo-Inclusivamente" src="/images/banner.png" alt="InclusivaMente">
     <h2 class="login-tittle">Iniciar sesión</h2>
-        <form>
+        <form action="/users/login" method="POST">
           <label for="username">Nombre del administrador:</label>
                 <input type="text" id="username" name="username" required>
                 <br>
@@ -26,6 +26,9 @@
           <button class="button">Iniciar sesión</button>
           <a class="olvidaste" href="#">¿Olvidaste tu contraseña?</a>
         </form>
+        <p class="alert-text">
+          <%= locals.msg && msg %>
+        </p>
       </div>
 </body>
 </html>

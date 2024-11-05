@@ -4,10 +4,31 @@
 }
 
 body {
+    margin: 0;
     background-color: #8ADBDB;
     background-image: url('/images/fondoBODY.png');
     background-size: cover; /* Otras opciones: contain, 100% 100%, auto */
     background-position: center; /* Otras opciones: top, bottom, left, right */
     background-repeat: no-repeat; /* Otras opciones: repeat, repeat-x, repeat-y */
     background-attachment: fixed; /* Hace que la imagen permanezca fija al hacer scroll */
+}
+
+.alert-text {
+    color: var(--color-azul);
+}
+
+html, body {
+    height: 100%; /* Asegura que el html y el body ocupen el 100% de la altura */
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina padding por defecto */
+}
+
+body {
+    display: flex; /* Usamos flexbox para organizar el contenido */
+    flex-direction: column; /* Coloca los elementos en columna */
+}
+
+main {
+    flex: 1; /* Permite que el main ocupe el espacio restante */
+    margin-bottom: 60px; /* Ajusta el margen inferior según sea necesario */
 }

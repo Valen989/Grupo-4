@@ -46,6 +46,9 @@
 .login-tittle {
     margin-bottom: 20px;
 }
+.profile-body{
+    margin: 0;
+}
 .olvidaste {
 display: block;
 margin-top: 15px;
@@ -94,7 +97,14 @@ input {
     width: 400px;
 }
 
+.olvidaste{
+display: inline-flex;
+margin-top: 15px;
+justify-content: right;
+margin-left: 90px;
 }
+}
+
 
 @media (min-width:  1024px){
     .back-container{
