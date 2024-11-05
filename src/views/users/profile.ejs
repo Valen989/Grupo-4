@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', { title: "Mi Perfil" }) %>
+<body class="perfil-body">
+    <%- include('../partials/header') %>
+    <main>
+        <div class="card-profile">
+        <h1>Mi Perfil</h1>
+        <% if (userLogin) { %>
+            <p>Nombre: <%= userLogin.username %></p>
+            <p>Email: <%= userLogin.email %></p>
+        <% } else { %>
+            <p>No hay datos de usuario disponibles</p>
+        <% } %>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>
