@@ -48,8 +48,28 @@ module.exports = {
 
     },
     update : (req,res) => {
-        return res.send(req.body)
 
+    const {radio_id} = req.params
+    const {name, city, province, frequency, admin} = req.body
+    const radiosModified = products.map(radio => {
+        if(radio.id === +radio_id){
+
+            radio = {
+              ...radio,
+              name : name.trim(),
+              city : city.trim(),
+              province : province.trim(),
+              frequency : frequency,
+              admin : admin,
+            }
+        }
+        return radio
+  })
+        storeData(radiosModified,'radios.json');
+
+        return res.render('radios',{
+          radios : radiossModified
+        })
     },
     destroy : (req,res) => {
         return res.send(req.body)
