@@ -23,7 +23,7 @@ module.exports = {
               const { name, city, province, frequency, admin } = req.body;
             
               //guardar datos
-              const newProduct = {
+              const newRadio = {
                 id: +radios[radios.length - 1].id + 1,
                 name: name.trim(),
                 city: city.trim(),
@@ -33,15 +33,16 @@ module.exports = {
                 image: req.file ? req.file.filename : "http://dummyimage.com/200x300.png/cc0000/ffffff",
               };
           
-              radios.push(newRadios);
+              radios.push(newRadio);
           
               storeData(radios,'radios.json')
           
               //respuesta al cliente
               return res.redirect(`/radios/${newRadio.id}`)
             }
-            return res.send(req.body)
-          },
+        },
+            
+        
     edit : (req,res) => {
         return res.render('radios/edit')
 
