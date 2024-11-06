@@ -1,7 +1,13 @@
 const path = require('path');
 const { getData, storeData } = require("../data");
 const radios = getData("radios.json");
-
+const radiosOrdered = radios.sort((a, b) =>
+    a.name.toLowerCase() > b.name.toLowerCase()
+      ? 1
+      : a.name.toLowerCase() < b.name.toLowerCase()
+      ? -1
+      : 0
+  );
 
 module.exports = {
     list : (req,res) => {
@@ -12,7 +18,10 @@ module.exports = {
         
     },
     add : (req,res) => {
-        return res.render('radios/add')
+        return res.render('radios-add',{
+            radios: radiosOrdered,
+
+        });
 
     },
     create : (req,res) => {
