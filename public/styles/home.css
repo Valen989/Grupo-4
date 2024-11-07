@@ -11,10 +11,10 @@
 }
 
 
-/*Imagen de video*/
 .video-referencia{
     display: flex;
     padding: 10px;
+    
 }
 
 .video-referencia img{
@@ -22,20 +22,7 @@
     margin-left: -10px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
 }
-
-.imagen-referencia img{
-   margin-left: 80px;
-    width: 150px;
-}
-
-.titulo-stream{
-    padding: 10px;
-    font-family: "Teko", sans-serif;
-}
-
-.descripcion-stream{
-    font-family: "DM Sans", sans-serif;
-}
+/*Agregado stream*/
 
 .agregado-stream{
     margin: 10px;
@@ -43,6 +30,31 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.titulo-stream{
+    padding: 20px;
+    font-family: "Teko", sans-serif;
+   
+    
+}
+
+.titulo-stream h2{
+    margin-top: -5px;
+
+}
+
+.descripcion-stream{
+    font-family: "DM Sans", sans-serif;
+    padding: 10px;
+    margin-top: -65px;
+}
+
+.imagen-referencia img{
+    margin-left: 80px;
+     width: 150px;
+     margin-top: -15px;
+     margin-bottom: 10px;
+ }
 
 @media (min-width: 768px){
     /*Stream en vivo*/
@@ -56,15 +68,42 @@
         margin-left: 70px;
         width: 600px;
     }
+    
+    .agregado-stream{
+        display: flex;
+    }
+
+    
     /*Titulo stream*/
 
+.titulo-stream{
+    order: 2;
+    margin-bottom: 0px;
+    
+}
 
 
+.descripcion-stream{
+    order: 3;
+   margin-top: -40px;
+   margin-left: -8  0px;
+   margin-right: -20px;
+    
+    
+}
+
+.imagen-referencia{
+    order:1;
+}
 
 /*Imagen agregado*/
     .imagen-referencia img{
-        margin-left: 280px;
-         width: 200px;
+        margin-top: 40px;
+        margin-right: 80px;
+        margin-left: 15px;
+         width: 280px;
+         height: 280px;
+
      }
 }
 
@@ -82,8 +121,16 @@
     .video-referencia img{
         margin-left: 390px;
         width: 700px;
+        margin-bottom: 10px;
        
     }
+/*Imagen agregado*/
+.imagen-referencia img{
+    margin-left: 10px;
+    margin-right: -;
+    width: 300px;
+    height: 300px;
+ }
 
 /*Titulo stream*/
 .titulo-stream{
@@ -95,9 +142,5 @@
     font-size: 30px;
 }
 
-/*Imagen agregado*/
-    .imagen-referencia img{
-        margin-left: 650px;
-         width: 200px;
-     }
+
 }
