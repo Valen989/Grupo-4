@@ -1,45 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-    <%- include('./partials/head', {
-        title : "Nosotros"
-    }) %>
-   
-<body class="pagina-about">
-    <!--Cabezera-->
+
+ 
+        <!DOCTYPE html>
+        <html lang="es">
+            <%- include('./partials/head', {
+                title : "Home"
+            }) %>
+        <body>
+          <!--Cabezera-->
     <%- include('./partials/header') %>
-    <main>
-      
-
-
-        <div class="div-about">  
-            <h1>Nosotros</h1>
-            <h2>Sobre WOX FM</h2>
-            <p>WOX FM es una radio comunitaria ubicada en Rosario, Argentina. Nuestra misión es brindar información y entretenimiento de calidad a la comunidad.</p>
-            
-            <h3>Misión</h3>
-            <p>Brindar información y entretenimiento de calidad a la comunidad de Rosario y alrededores.</p>
-            
-            <h3>Visión</h3>
-            <p>Ser una referencia en la radio comunitaria argentina, conocidos por nuestra programación innovadora y comprometida con la comunidad.</p>
-            
-            <h3>Equipo</h3>
-            <ul>
-            <li><strong>Director:</strong> Juan Pérez</li>
-            <li><strong>Productora:</strong> María García</li>
-            <li><strong>Locutor:</strong> Pedro López</li>
-            </ul>
-            
-            <h3>Programación</h3>
-            <ul>
-            <li><strong>Noticias de la mañana:</strong> 8:00 am</li>
-            <li><strong>Música en vivo:</strong> 12:00 pm</li>
-            <li><strong>Debate político:</strong> 8:00 pm</li>
-            </ul>
-            
-            <h3>Contacto</h3>
-            <p>contacto@woxfmrosario.com.ar</p>
-            </div>
-    </main>
-    <%- include('./partials/footer') %>
-</body>
-</html>
+          <main class="container">
+            <section class="about-container">
+              <h2>Acerca de WOX La Radio</h2>
+              <p>WOX La Radio es una aplicación de radio en línea que te permite escuchar tus estaciones favoritas desde cualquier lugar.</p>
+              <p>Nuestra misión es brindarte la mejor experiencia de radio en línea, con una variedad de estaciones y programas para todos los gustos.</p>
+            </section>
+            <section class="team-container">
+              <h2>Equipo de WOX La Radio</h2>
+              <ul>
+                <li>
+                  <img src="" alt="Equipo 1">
+                  <h3>Director Genera: Juan Pérez</h3>
+                  <p>Juan Pérez es el director general de la Radio WOX, con más de 10 años de experiencia en el sector radial.</p>
+                </li>
+                <li>
+                  <img src="equipo2.png" alt="Equipo 2">
+                  <h3>Productora: María Rodríguez</h3>
+                  <p> María Rodríguez es la productora de la Radio WOX, responsable de la coordinación de programas y eventos</p>
+                <img src="" alt="Equipo 3">
+                  <h3>Director : Juan Pérez</h3>
+                  <p>Juan Pérez es el director general de la Radio WOX, con más de 10 años de experiencia en el sector radial.</p>
+                </li></li>
+              </ul>
+            </section>
+            <section class="contact-container">
+              <h2>Contáctanos</h2>
+              <p>¿Tienes alguna pregunta o sugerencia? Contáctanos a través de nuestro correo electrónico: <a href="mailto:info@woxladio.com">info@woxladio.com</a></p>
+            </section>
+          </main>
+          <footer class="bottom-bar">
+            <button class="back-btn">Volver</button>
+          </footer>
+        </body>
+        </html>
