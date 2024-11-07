@@ -7,5 +7,8 @@ module.exports = {
     },
     admin : (req,res) => {
         return res.render('admin')
+    },
+    contact : (req,res) => {
+        return res.render('contact')
     }
 }
