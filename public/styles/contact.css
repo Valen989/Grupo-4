@@ -21,7 +21,9 @@
 
 @media (min-width: 1024px){
     .form-contact {
-        width: 50%;
+        display: inline-block;
+    width: 50%;
+    margin-left: 50%;
     }
     .contact-container{
         margin: auto;
