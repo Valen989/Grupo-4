@@ -7,6 +7,7 @@ module.exports =[
     .notEmpty()
     .withMessage("El nombre es obligatorio").bail(),
 
+
     body("email")
     .notEmpty()
     .withMessage("El email es obligatorio").bail()
@@ -22,4 +23,4 @@ module.exports =[
     .matches(/^[A-Z]\w*$/).withMessage("La primera letra debe tener una mayuscula y el password debe tener minimo un numero")
     
 
-]
+];

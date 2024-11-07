@@ -96,5 +96,17 @@
     "username": "Nahuel",
     "email": "Nagu@gmail.com",
     "password": "2020"
+  },
+  {
+    "id": 14,
+    "username": "asdasd",
+    "email": "asdsad@xn--sdalksa-7zad.com",
+    "password": "sadsad"
+  },
+  {
+    "id": 15,
+    "username": "",
+    "email": "sajdklas@gmail.com",
+    "password": "dassd"
   }
 ]
