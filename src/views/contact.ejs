@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head', {
+        title : "Nosotros"
+    }) %>
+   
+<body class="pagina-about">
+    <!--Cabezera-->
+    <%- include('./partials/header') %>
+      
+        <i class="fa-solid fa-arrow-left-long"></i>
+    </a>
+</div>
+<div class="contact-container">
+    <div class="logo-fundacion">
+        <img src="/images/banner.png" alt="banner-inclusivamente" class="Logo-Inclusivamente">
+    </div>
+<div class="form-contact"></div>    
+<h4 class="texto-contact">¿Quieres ser parte de nostros?</h4>    
+
+<form action="./contact.ejs" method="post">
+<label for="radio">Radio</label>
+<input type="text" id="radio" name="radio" required>
+                <br>
+<label for="provincia">Provincia</label>
+<input type="text" id="provincia" name="provincia" required>
+                <br>
+<label for="ciudad">Ciudad</label>
+<input type="text" id="ciudad" name="ciudad" required>
+                <br>
+<label for="Frecuencia">Frecuencia de la radio</label>
+<input type="text" id="Frecuencia" name="Frecuencia" required>
+</div>
+<br>
+                <button class="button">Contactanos</button>
+
+
+</form>
+</div>
+
+  
+      </div>
+      <%- include('./partials/footer') %>
+</body>
+</html>

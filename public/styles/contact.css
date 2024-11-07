@@ -1,0 +1,30 @@
+.contact-container {
+    background: white;
+  padding: 13px;
+  width: 94%;
+  border: solid #A5C8A8;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 90%;
+  margin: 10px;
+}
+
+.texto-contact {
+    margin-left: 67px;    
+}
+
+
+@media (min-width: 768px){
+    
+ }
+
+
+@media (min-width: 1024px){
+    .form-contact {
+        width: 50%;
+    }
+    .contact-container{
+        margin: auto;
+      margin-bottom: 38px;
+
+}}
