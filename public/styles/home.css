@@ -71,10 +71,15 @@
     
     .agregado-stream{
         display: flex;
+        flex-direction: row;
     }
 
     
-    /*Titulo stream*/
+/*Titulo stream*/
+
+.titulo-descripcion-stream{
+    order:2
+}
 
 .titulo-stream{
     order: 2;
@@ -86,14 +91,14 @@
 .descripcion-stream{
     order: 3;
    margin-top: -40px;
-   margin-left: -8  0px;
+   margin-left: -50px;
    margin-right: -20px;
     
     
 }
 
 .imagen-referencia{
-    order:1;
+    
 }
 
 /*Imagen agregado*/
@@ -103,6 +108,7 @@
         margin-left: 15px;
          width: 280px;
          height: 280px;
+         order: 1;
 
      }
 }
@@ -124,10 +130,13 @@
         margin-bottom: 10px;
        
     }
+
+
+
 /*Imagen agregado*/
 .imagen-referencia img{
     margin-left: 10px;
-    margin-right: -;
+    
     width: 300px;
     height: 300px;
  }
