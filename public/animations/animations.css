@@ -49,13 +49,13 @@
         border: 2px solid transparent;
         transition: all 0.3s ease;
     }
-    
+    /*
     .nav-link:hover::before,
     .nav-link.active::before {
-        border-color: #0E8385; /* Color del borde cuando está activo o en hover */
-        transform: scale(1.1); /* Hace el borde ligeramente más grande */
+        border-color: #0E8385; 
+        transform: scale(1.1); 
     }
-    
+    */
     .nav-link.active {
         font-weight: bold; /* Opcional: hace el texto más grueso cuando está activo */
     }
