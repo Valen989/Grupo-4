@@ -76,7 +76,39 @@
         <div class="col-auto">
             <button type="submit" class="btn btn-primary mb-3">Agregar administrador</button>
           </div>
-    
+          <div>
+            <div>
+                <h2>Agregar radio nueva</h2>
+            </div>
+            <form method="POST" action ="/admin">
+                <div>
+                    <label for="radio">Registrar nueva radio</label>
+                </div>
+                 <div>
+                     <input class="form-control" type="text" placeholder="Nombre de radio" aria-label="default input example">
+                 </div>
+                 <div>
+                    <label for="province">Provincia de la radio</label>
+                </div>
+                 <div>
+                     <input class="form-control" type="text" placeholder="provincia" aria-label="default input example">
+                 </div>
+                 <div>
+                    <label for="city">Ciudad de la radio</label>
+                </div>
+                 <div>
+                     <input class="form-control" type="text" placeholder="ciudad" aria-label="default input example">
+                 </div>
+                 <div>
+                    <label for="frequency">Frecuencia de emisora</label>
+                </div>
+                 <div>
+                     <input class="form-control" type="text" placeholder="frecuencia" aria-label="default input example">
+                 </div>
+            </form>
+          </div>
+          
+
     </main>
     <%- include('./partials/footer') %>
 
