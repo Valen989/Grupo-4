@@ -3,9 +3,14 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
 const methodOverride = require('method-override');
-const session = require('express-session')
+const session = require('express-session');
+const morgan = require('morgan');
+
 const PORT = 3000;
 
+const connectDB = require("./config/connectDB.js");
+
+//Configuracion para las sesion
 app.use(session({
     secret: 'my_secret',
     resave: false,
@@ -19,31 +24,28 @@ app.use((req, res, next) => {
 
 app.use(methodOverride('_method'));
 
-const indexRoutes = require('./routes/index.routes')
-const recordsRoutes = require('./routes/records.routes')
-const radiosRoutes = require('./routes/radios.routes')
-const usersRoutes = require('./routes/users.routes')
+//registro de peticiones
+app.use(morgan('short'));
 
-
-  
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-
-app.use(express.static(path.join(__dirname,'..', "public")))
-
+//conexión con mongodb
+connectDB();
 
 //configuración del motor de plantillas
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname, 'views'));
 
-//Extraer los  datos del formulario
+//manejo de los datos capturados en un formulario
 app.use(express.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
+
+//manejo de lso recursos estáticos
+app.use(express.static(path.join(__dirname,'..', "public")))
 
 
-
-//Configuracion para las sesion
+const indexRoutes = require('./routes/index.routes')
+const recordsRoutes = require('./routes/records.routes')
+const radiosRoutes = require('./routes/radios.routes')
+const usersRoutes = require('./routes/users.routes')
 
 
   //Rutas
