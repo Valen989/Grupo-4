@@ -4,6 +4,8 @@ const { getData } = require('../data');
 const { error } = require('console');
 const User = require('../models/User.js');
 const { hashSync, compareSync } = require('bcryptjs');
+const Radio = require('../models/Radio.js');
+const Record = require('../models/Record.js');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 
@@ -92,6 +94,31 @@ module.exports = {
             return res.redirect('/users/login');
         }
         res.render('users/profile', { userLogin: req.session.userLogin });
+    },
+    destroy : async (req,res) => {
+        try {
+
+            const userDeleted = await User.findByIdAndDelete(req.params.id)
+
+            if(!userDeleted) throw new Error('USER NOT FOUND');
+
+            const radios = await Radio.find()
+
+            radios.forEach( async (r) => {
+                await Record.deleteMany({
+                    radio : r.id
+                })
+            })
+            await Radio.deleteMany({
+                user : req.params.id
+            })
+            
+            return res.redirect('/admin')
+            
+        } catch (error) {
+            console.log(error)
+            return res.redirect('/error')
+        }
     }
     }
     

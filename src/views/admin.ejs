@@ -39,7 +39,14 @@
                                                 <div class="d-flex gap-2">
                                                     <a href="/users/detail/<%= id %>" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a>
                                                     <a href="/users/reset" class="btn btn-sm btn-success"><i class="fa-solid fa-key"></i></a>
-                                                    <a href="/users/destroy" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                                                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#<%= id %>">
+                                                        <i class="fa-solid fa-trash-can"></i>
+                                                      </button>
+                                                    <%- include('./partials/modal-delete',{
+                                                        id,
+                                                        route : `/users/destroy/${id}?_method=DELETE`,
+                                                        message : "También se eliminará la o las radios asociadas y sus correspondientes grabaciones"
+                                                    }) %>
                                                 </div>
                                             </td>
                                           </tr>
@@ -52,6 +59,7 @@
                     </div>
                 </div>
             </main>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     </body>
 
