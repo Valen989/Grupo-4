@@ -40,11 +40,11 @@
                             <td><%= city %></td>
                             <td><%= province %></td>
 
-                            <td><%= user.username %></td>
+                            <td><%= user?.username %></td>
                             <td>
                               <div class="d-flex gap-2">
                                 <a href="/radios/detail/<%= id %>" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a>
-                                <a href="/radios/reset" class="btn btn-sm btn-success"><i class="fa-solid fa-pencil"></i></a>
+                                <a href="/radios/edit/<%= id %>" class="btn btn-sm btn-success"><i class="fa-solid fa-pencil"></i></a>
                                 <a href="/radios/destroy" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></a>
                             </div>
                             </td>

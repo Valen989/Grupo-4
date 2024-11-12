@@ -75,30 +75,48 @@ module.exports = {
     }
   },
 
-  edit: (req, res) => {
+  edit: async (req, res) => {
+
+    try {
+      const { radio_id } = req.params;
+      const radio = await Radio.findById(radio_id);
+
+      if (!radio) throw new Error("RADIO NOT FOUND");
+
+      const users = await User.find();
+
+      return res.render('radios/edit',{
+        radio,
+        users
+      })
+
+    } catch (error) {
+      
+    }
+
     return res.render("radios/edit");
   },
-  update: (req, res) => {
-    const { radio_id } = req.params;
-    const { name, city, province, frequency, admin } = req.body;
-    const radiosModified = products.map((radio) => {
-      if (radio.id === +radio_id) {
-        radio = {
-          ...radio,
-          name: name.trim(),
-          city: city.trim(),
-          province: province.trim(),
-          frequency: frequency,
-          admin: admin,
-        };
-      }
-      return radio;
-    });
-    storeData(radiosModified, "radios.json");
+  update: async (req, res) => {
+    try {
+      const { radio_id } = req.params;
+      const { name, city, province, frequency, user } = req.body;
+      
+      const radioUpdated = await Radio.findByIdAndUpdate(radio_id, {
+        name: name.trim(),
+        city: city.trim(),
+        province: province.trim(),
+        frequency: frequency,
+        user
+      });
 
-    return res.render("radios", {
-      radios: radiossModified,
-    });
+      if (!radioUpdated) throw new Error("RADIO NOT FOUND");
+  
+      return res.redirect("/radios");
+    } catch (error) {
+      console.log(error);
+      return res.redirect("/error");
+    }
+   
   },
   destroy: (req, res) => {
     return res.send(req.body);
