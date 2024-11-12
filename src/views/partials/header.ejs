@@ -7,34 +7,36 @@
     </div>
     <div class="barra-navegacion">
         <nav>
-           
-                <% if (userLogin) { %>
-                    <div class="nav-links">
-                        <a href="/">Stream en vivo</a>
-                        <a href="/records/list">Grabaciones</a>
-                        <a href="/about">Nosotros</a>
-                        <a href="/contact">Contactanos</a>
-                    </div>
-                 <!--    <a href="/users/profile" class="login-link">
+
+
+            <div class="nav-links">
+                <a href="/">Stream en vivo</a>
+                <a href="/records/list">Grabaciones</a>
+                <a href="/about">Nosotros</a>
+                <a href="/contact">Contactanos</a>
+            </div>
+
+            <% if (userLogin) { %>
+                <!--    <a href="/users/profile" class="login-link">
                         <img class="login-icons" src="/icons/profile-icon.png" alt="icon-user">
                         <span>Mi Perfil</span>
                     </a> -->
-                        <a href="/admin" class="login-link">
-                        <img class="login-icons" src="/icons/login-icon.png" alt="icon-user">
-                        <span>Admin</span>
-                    </a>
-                    <a href="/users/logout" class="login-link">
-                        <img class="login-icons" src="/icons/logout-icon.png" alt="icon-logout">
-                        <span>Cerrar Sesión</span>
-                    </a>
+                <a href="/admin" class="login-link">
+                    <img class="login-icons" src="/icons/login-icon.png" alt="icon-user">
+                    <span>Admin</span>
+                </a>
+                <a href="/users/logout" class="login-link">
+                    <img class="login-icons" src="/icons/logout-icon.png" alt="icon-logout">
+                    <span>Cerrar Sesión</span>
+                </a>
                 <% } else { %>
-               
+
                     <a href="/users/login" class="login-link">
                         <img class="login-icons" src="/icons/login-icon.png" alt="icon-login">
                         <span>Iniciar sesión</span>
                     </a>
-                <% } %>
-            </div>
-        </nav>
+                    <% } %>
+    </div>
+    </nav>
     </div>
 </header>

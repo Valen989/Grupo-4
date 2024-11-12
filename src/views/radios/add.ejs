@@ -12,43 +12,52 @@
             <main class="">
                 <div class="col-12 col-md-10 col-lg-8 mx-auto">
 
-                <div class="container">
+                    <div class="container">
 
-                    <h2>Agregar radio</h2>
-                    <hr>
-                    <form method="POST" class="row">
-                        <div class="mb-3 col-12">
-                            <label for="radio">Nombre</label>
-                       
-                             <input class="form-control" type="text" placeholder="Nombre de radio" aria-label="default input example">
-                         </div>
-                         <div class="mb-3 col-12 col-md-6">
-                            <label for="province">Provincia</label>
-                       
-                             <input class="form-control" type="text" placeholder="provincia" aria-label="default input example">
-                         </div>
-                         <div class="mb-3 col-12 col-md-6">
-                            <label for="city">Ciudad</label>
-                       
-                             <input class="form-control" type="text" placeholder="ciudad" aria-label="default input example">
-                         </div>
-                         <div class="mb-3 col-12 col-md-6">
-                            <label for="frequency">Frecuencia</label>
-                        
-                     
-                             <input class="form-control" type="text" placeholder="frecuencia" aria-label="default input example">
-                         </div>
-                         <div class="mb-3 col-12 col-md-6">
-                            <label for="frequency">Responsable</label>
-                        
-                     
-                             <input class="form-control" type="text" placeholder="responsable" aria-label="default input example">
-                         </div>
-                         <div class="mb-3 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-success mb-3">Guardar cambios</button>
-                        </div>
-                    </form>
-                </div>
+                        <h2>Agregar radio</h2>
+                        <hr>
+                        <form method="POST" class="row">
+                            <div class="mb-3 col-12">
+                                <label for="radio">Nombre</label>
+
+                                <input class="form-control" type="text" placeholder="Nombre de radio"
+                                    name="name">
+                            </div>
+                            <div class="mb-3 col-12 col-md-6">
+                                <label for="province">Provincia</label>
+
+                                <input class="form-control" type="text" placeholder="provincia"
+                                    name="province">
+                            </div>
+                            <div class="mb-3 col-12 col-md-6">
+                                <label for="city">Ciudad</label>
+
+                                <input class="form-control" type="text" placeholder="ciudad"
+                                    name="city">
+                            </div>
+                            <div class="mb-3 col-12 col-md-6">
+                                <label for="frequency">Frecuencia</label>
+
+
+                                <input class="form-control" type="text" placeholder="frecuencia"
+                                    name="frequency">
+                            </div>
+                            <div class="mb-3 col-12 col-md-6">
+                                <label for="frequency">Responsable</label>
+
+
+                              <select class="form-select" name="radio">
+                                    <option value="" selected hidden>Seleccione...</option>
+                                    <% users.forEach(({id,username}) => { %>
+                                     <option value="<%= id %>"><%= username %></option>
+                                    <% }) %>
+                                </select>
+                            </div>
+                            <div class="mb-3 d-flex justify-content-end">
+                                <button type="submit" class="btn btn-success mb-3">Guardar cambios</button>
+                            </div>
+                        </form>
+                    </div>
 
                 </div>
 

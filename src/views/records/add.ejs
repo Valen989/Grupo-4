@@ -12,39 +12,51 @@
             <main class="">
                 <div class="col-12 col-md-10 col-lg-8 mx-auto">
 
-                <div class="container">
+                    <div class="container">
 
-                    <h2>Agregar transmisión</h2>
-                    <hr>
-                    <form method="POST" action ="/admin">
-                        <div class="mb-3">
-                    <label for="title">Titulo del stream</label>
-                      
-                            <input class="form-control" type="text" placeholder="Titulo" aria-label="default input example">
-                        </div>
-                        <div class="mb-3">
-                            <label for="date">Fecha del stream</label>
-                      
-                            <input class="form-control" type="date" placeholder="Fecha" aria-label="default input example">
-                        </div>
-                        <div class="mb-3">
-                            <label for="link">Link del video</label>
-                      
-                            <input class="form-control" type="text" >
-                        </div>
+                        <h2>Agregar transmisión</h2>
+                        <hr>
+                        <form method="POST" class="row">
+                            <div class="mb-3 col-12 col-md-6">
+                                <label for="title">Titulo del stream</label>
+
+                                <input class="form-control" type="text" placeholder="Titulo"
+                                    name="title">
+                            </div>
+                            <div class="mb-3 col-12 col-md-6">
+                                <label for="date">Fecha del stream</label>
+
+                                <input class="form-control" type="date" placeholder="Fecha" name="date"
+                                   >
+                            </div>
+                            <div class="mb-3 col-12 ">
+                                <label for="description">Breve descripción</label>
+
+                                <textarea class="form-control" type="text" name="description" style="resize: none;">
+
+                                </textarea>
+                            </div>
+                            <div class="mb-3 col-12 col-md-6">
+                                <label for="link">Link del video</label>
+
+                                <input class="form-control" type="text" name="link">
+                            </div>
+
+
+                            <div class="mb-3 col-12 col-md-6">
+                                <label for="radio">Seleccionar radio</label>
+
+                                <select class="form-select" name="radio">
+                                    <option value="" selected hidden>Seleccione...</option>
+                                </select>
+                            </div>
                             
-                       
-                         <div class="mb-3">
-                            <label for="province">Seleccionar provincia</label>
-                        
-                            <select class="form-select" aria-label="Default select example"></select>
-                        </div>
-                        <div class="mb-3 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-success mb-3">Guardar cambios</button>
-                        </div>
-                        
-                    </form>
-                </div>
+                            <div class="mb-3 d-flex justify-content-end">
+                                <button type="submit" class="btn btn-success mb-3">Guardar cambios</button>
+                            </div>
+
+                        </form>
+                    </div>
 
                 </div>
 

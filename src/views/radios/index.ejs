@@ -23,30 +23,36 @@
                     <table class="table">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Frecuencia</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">Provincia</th>
+                            <th scope="col">Responsable</th>
+                            <th scope="col">Acciones</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                          <% radios.forEach(({id, name, province, city, frequency, user}) => { %>
+                            <tr>
+
+                            <td><%= name %></td>
+                            <td><%= frequency %></td>
+                            <td><%= city %></td>
+                            <td><%= province %></td>
+
+                            <td><%= user.username %></td>
+                            <td>
+                              <div class="d-flex gap-2">
+                                <a href="/radios/detail/<%= id %>" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a>
+                                <a href="/radios/reset" class="btn btn-sm btn-success"><i class="fa-solid fa-pencil"></i></a>
+                                <a href="/radios/destroy" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                            </div>
+                            </td>
                           </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+
+                          <% }) %>
+                        
+                      
                         </tbody>
                       </table>
                 </div>

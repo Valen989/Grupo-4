@@ -27,12 +27,13 @@ module.exports = {
             const newUser = new User({
                 username : username.trim(),
                 email : email.trim(),
-                password : hashSync(password, 12)
+                password : hashSync(password, 12),
+                role: "user"
             })
 
             await newUser.save();
 
-            return res.redirect('/users/login')
+            return res.redirect('/admin')
 
         } catch (error) {
             console.log(error)

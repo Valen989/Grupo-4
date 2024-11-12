@@ -1,99 +1,106 @@
-const path = require('path');
+const path = require("path");
 const { getData, storeData } = require("../data");
+const User = require("../models/User.js");
+const Radio = require("../models/Radio.js");
+const { validationResult } = require("express-validator");
 const radios = getData("radios.json");
 const radiosOrdered = radios.sort((a, b) =>
-    a.name.toLowerCase() > b.name.toLowerCase()
-      ? 1
-      : a.name.toLowerCase() < b.name.toLowerCase()
-      ? -1
-      : 0
-  );
+  a.name.toLowerCase() > b.name.toLowerCase()
+    ? 1
+    : a.name.toLowerCase() < b.name.toLowerCase()
+    ? -1
+    : 0
+);
 
 module.exports = {
-  index : (req,res) => {
-    return res.render("radios/index", {
-         radios,
-         
-    });
-    
-},
-    list : (req,res) => {
-        return res.render("radios/list", {
-             radios,
-             
-        });
-        
-    },
-    add : (req,res) => {
-        return res.render('radios/add',{
-            radios: radiosOrdered,
+  index: async (req, res) => {
 
-        });
+    try {
 
-    },
-    create : (req,res) => {
-       
-            const errors = validationResult(req);
-        
-            if(errors.isEmpty()){
-              const { name, city, province, frequency, admin } = req.body;
-            
-              //guardar datos
-              const newRadio = {
-                id: +radios[radios.length - 1].id + 1,
-                name: name.trim(),
-                city: city.trim(),
-                province: province.trim(),
-                frequency: +frequency,
-                admin: +admin,
-                image: req.file ? req.file.filename : "http://dummyimage.com/200x300.png/cc0000/ffffff",
-              };
-          
-              radios.push(newRadio);
-          
-              storeData(radios,'radios.json')
-          
-              //respuesta al cliente
-              return res.redirect(`/radios/${newRadio.id}`)
-            }
-        },
-            
-        
-    edit : (req,res) => {
-        return res.render('radios/edit')
+      const radios = await Radio.find().populate('user')
+      console.log(radios);
+      
 
-    },
-    update : (req,res) => {
-
-    const {radio_id} = req.params
-    const {name, city, province, frequency, admin} = req.body
-    const radiosModified = products.map(radio => {
-        if(radio.id === +radio_id){
-
-            radio = {
-              ...radio,
-              name : name.trim(),
-              city : city.trim(),
-              province : province.trim(),
-              frequency : frequency,
-              admin : admin,
-            }
-        }
-        return radio
-  })
-        storeData(radiosModified,'radios.json');
-
-        return res.render('radios',{
-          radios : radiossModified
-        })
-    },
-    destroy : (req,res) => {
-        return res.send(req.body)
-
+      return res.render("radios/index", {
+        radios,
+      });
+      
+    } catch (error) {
+      console.log(error);
+      return res.redirect("/error");
     }
-}
+   
+  },
+  list: (req, res) => {
+    return res.render("radios/list", {
+      radios,
+    });
+  },
+  add: async (req, res) => {
+    try {
+      const users = await User.find().sort("username");
+      return res.render("radios/add", {
+        users,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.redirect("/error");
+    }
+  },
+  create: async (req, res) => {
+    const errors = validationResult(req);
 
+    try {
+      if (errors.isEmpty()) {
+        const { name, city, province, frequency, user } = req.body;
 
+        const newRadio = new Radio({
+          name: name.trim(),
+          city: city.trim(),
+          province: province.trim(),
+          frequency: frequency,
+          user,
+          image: req.file
+            ? req.file.filename
+            : "http://dummyimage.com/200x300.png/cc0000/ffffff",
+        });
 
+        await newRadio.save();
 
+        return res.redirect(`/radios`);
+      }
+    } catch (error) {
+      console.log(error);
+      return res.redirect("/error");
+    }
+  },
 
+  edit: (req, res) => {
+    return res.render("radios/edit");
+  },
+  update: (req, res) => {
+    const { radio_id } = req.params;
+    const { name, city, province, frequency, admin } = req.body;
+    const radiosModified = products.map((radio) => {
+      if (radio.id === +radio_id) {
+        radio = {
+          ...radio,
+          name: name.trim(),
+          city: city.trim(),
+          province: province.trim(),
+          frequency: frequency,
+          admin: admin,
+        };
+      }
+      return radio;
+    });
+    storeData(radiosModified, "radios.json");
+
+    return res.render("radios", {
+      radios: radiossModified,
+    });
+  },
+  destroy: (req, res) => {
+    return res.send(req.body);
+  },
+};
