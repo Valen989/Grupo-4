@@ -2,11 +2,14 @@
 
     <div class="barra-navegacion">
         <nav>
-           
+       
                     <div class="nav-links">
                         <a href="/streams">Streams en vivo</a>
-                        <a href="/admin">Usuarios</a>
-                        <a href="/radios">Radios</a>
+                        <% if (userLogin.rol == "admin") { %>
+                            <a href="/admin">Usuarios</a>
+                            <a href="/radios">Radios</a>
+                            <% } %>
+                    
                         <a href="/records">Trasmisiones</a>
                     </div>
                     <a href="/users/profile" class="login-link">
