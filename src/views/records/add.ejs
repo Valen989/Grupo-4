@@ -48,6 +48,9 @@
 
                                 <select class="form-select" name="radio">
                                     <option value="" selected hidden>Seleccione...</option>
+                                    <% radios.forEach(({id, name}) => { %>
+                                     <option value="<%= id %>"><%= name %></option>
+                                    <% }) %>
                                 </select>
                             </div>
                             

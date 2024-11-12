@@ -19,35 +19,40 @@
                         <a class="btn btn-success" href="/records/add">Agregar nueva</a>
                     </div>
                     <hr>
+                   <div class="table-responsive">
                     <table class="table">
-                        <thead>
+                      <thead>
+                        <tr>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Fecha</th>
+                          <th scope="col">Link</th>
+                          <th scope="col">Radio</th>
+                          <th scope="col">Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% records.forEach(({id, title, date, link, radio}) => { %>
                           <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
-                        </tbody>
-                      </table>
+
+                          <td><%= title %></td>
+                          <td><%= date %></td>
+                          <td><%= link %></td>
+                          <td><%= radio?.name %></td>
+                          <td>
+                            <div class="d-flex gap-2">
+                              <a href="/records/detail/<%= id %>" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a>
+                              <a href="/records/edit/<%= id %>" class="btn btn-sm btn-success"><i class="fa-solid fa-pencil"></i></a>
+                              <a href="/records/destroy" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                          </div>
+                          </td>
+                        </tr>
+
+                        <% }) %>
+                      
+                    
+                      </tbody>
+                    </table>
+                   </div>
                 </div>
 
                 </div>

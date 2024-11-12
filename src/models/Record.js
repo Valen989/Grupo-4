@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const radioSchema = new mongoose.Schema({
+const recordSchema = new mongoose.Schema({
   title: String,
   date: Date,
   description: String,
@@ -11,4 +11,4 @@ const radioSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Radio", radioSchema);
+module.exports = mongoose.model("Record", recordSchema);
