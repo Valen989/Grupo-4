@@ -2,6 +2,8 @@ const fs = require('fs')
 const path = require('path')
 const { getData } = require('../data');
 const { error } = require('console');
+const User = require('../models/User.js');
+const { hashSync, compareSync } = require('bcryptjs');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 
@@ -17,60 +19,62 @@ module.exports = {
     register : (req,res) => {
         return res.render('users/register')
     },
-    processRegister : (req,res) => {
+    processRegister : async (req,res) => {
 
-        const users = getUsers(); //Trae los usuarios 
-
+        try {
             const { username, email, password } = req.body;
 
-            const userExists = users.find(user => user.email === email);
-    if (userExists) {
-        return res.status(400).json({ error: 'El email ya está registrado' });
-    }
+            const newUser = new User({
+                username : username.trim(),
+                email : email.trim(),
+                password : hashSync(password, 12)
+            })
 
-    const newUser = {
-        id: users.length + 1,
-        username,
-        email,
-        password 
-    };
+            await newUser.save();
 
-    users.push(newUser);
+            return res.redirect('/users/login')
 
-    saveUsers(users);
-
-    //redirige a login
-    return res.redirect('/users/login');
-
+        } catch (error) {
+            console.log(error)
+            return res.redirect('/error')
+        }
     },
     login : (req,res) => {
         return res.render('users/login')
 
     },
-    processLogin: (req, res) => {
-        const users = getData('users.json');
+    processLogin: async (req, res) => {
 
-        const {email, password} = req.body;
-
-        const user = users.find(user => user.email == email);
-        
-        if(user && user.password == password) {
-            console.log("Autenticación exitosa");
-            req.session.userLogin = {
-                id : user.id,
-                username : user.username,
-                email : user.email,
-                rol : user.rol
-                
-            };
-
-            return res.redirect('/')
-        }else {
-            console.log("Intento fallido");
-            return res.render('users/login',{
-                msg : "Credenciales inválidas"
+        try {
+            const {email, password} = req.body;
+            const user = await User.findOne({
+                email : email.trim()
             });
+
+            if(user && compareSync(password, user.password)) {
+                console.log("Autenticación exitosa");
+                req.session.userLogin = {
+                    id : user.id,
+                    username : user.username,
+                    email : user.email,
+                    rol : user.role
+                    
+                };
+    
+                return res.redirect('/admin')
+            }else {
+                console.log("Intento fallido");
+                return res.render('users/login',{
+                    msg : "Credenciales inválidas"
+                });
+            }
+
+        } catch (error) {
+            console.log(error)
+            return res.redirect('/error')
         }
+    
+      
     },
 
     logout: (req, res) => {

@@ -10,15 +10,22 @@ const radiosOrdered = radios.sort((a, b) =>
   );
 
 module.exports = {
+  index : (req,res) => {
+    return res.render("radios/index", {
+         radios,
+         
+    });
+    
+},
     list : (req,res) => {
-        return res.render("radios", {
+        return res.render("radios/list", {
              radios,
              
         });
         
     },
     add : (req,res) => {
-        return res.render('radios-add',{
+        return res.render('radios/add',{
             radios: radiosOrdered,
 
         });

@@ -1,4 +1,7 @@
 module.exports = {
+    index : (req,res) => {
+        return res.render('records/index')
+    },
     list : (req,res) => {
         return res.render('records/list')
     },
