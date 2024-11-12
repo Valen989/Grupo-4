@@ -1,3 +1,5 @@
+const { validationResult } = require("express-validator");
+const Radio = require("../models/Radio.js");
 const User = require("../models/User.js");
 
 module.exports = {
@@ -9,11 +11,16 @@ module.exports = {
   },
   admin: async (req, res) => {
     try {
-      const users = await User.find();
 
-      return res.render("admin", {
-        users,
-      });
+      if(req.session.userLogin.rol == "admin"){
+        const users = await User.find();
+
+        return res.render("admin", {
+          users,
+        });
+      }
+      return res.redirect('/streams')
+   
     } catch (error) {
       console.log(error);
       return res.redirect("/error");
@@ -25,10 +32,5 @@ module.exports = {
   error: (req, res) => {
     return res.render("error");
   },
-  stream: (req, res) => {
-    return res.render("stream");
-  },
-  updateStream: (req, res) => {
-    return res.send(req.body);
-  },
+ 
 };
