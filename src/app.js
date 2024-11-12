@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -6,7 +7,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const morgan = require('morgan');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const connectDB = require("./config/connectDB.js");
 

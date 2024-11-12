@@ -91,7 +91,8 @@ module.exports = {
       })
 
     } catch (error) {
-      
+      console.log(error);
+      return res.redirect("/error");
     }
 
     return res.render("radios/edit");

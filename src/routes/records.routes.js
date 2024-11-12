@@ -11,9 +11,9 @@ router
 .get('/list',list)
 .get('/add',add)
 .post('/add',create)
-.get('/edit/:id',edit)
-.put('/update/:id',update)
-.delete('/destroy/:id',destroy)
+.get('/edit/:record_id',edit)
+.put('/update/:record_id',update)
+.delete('/destroy/:record_id',destroy)
 
 
 

@@ -55,12 +55,46 @@ module.exports = {
           return res.redirect("/error");
         }
     },
-    edit : (req,res) => {
-        return res.render('records/edit')
+    edit : async (req,res) => {
+      try {
+        const { record_id } = req.params;
+        const record = await Record.findById(record_id);
+  
+        if (!record) throw new Error("RECORD NOT FOUND");
+  
+        const radios = await Radio.find();
+  
+        return res.render('records/edit',{
+          record,
+          radios
+        })
+  
+      } catch (error) {
+        console.log(error);
+        return res.redirect("/error");
+      }
 
     },
-    update : (req,res) => {
-        return res.send(req.body)
+    update : async (req,res) => {
+      try {
+        const { record_id } = req.params;
+        const { title, date, description, link, radio } = req.body;
+        
+        const recordUpdated = await Record.findByIdAndUpdate(record_id, {
+          title: title.trim(),
+          date,
+          description: description.trim(),
+          link,
+          radio,
+        });
+  
+        if (!recordUpdated) throw new Error("RECORD NOT FOUND");
+    
+        return res.redirect("/records");
+      } catch (error) {
+        console.log(error);
+        return res.redirect("/error");
+      }
 
     },
     destroy : (req,res) => {
