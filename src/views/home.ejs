@@ -6,34 +6,36 @@
 <body class="body-home">
     <!--Cabezera-->
     <%- include('./partials/header') %>
-    <main>
-        
-        <!--Stream-->
-        <div class="stream-en-vivo">
-        <h2>STREAM EN VIVO</h3>
+    <main class="card mx-4">
+        <div class="card-body">
+        <% if (stream) { %>
+            <h1 class="badge rounded-pill text-bg-success fs-3">Trasmitiendo en vivo</h1>
+
+            <section class="d-flex justify-content-center">
+                <iframe width="100%" height="600" src="<%= stream.link %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </section>
+          
+           <div class="agregado-stream card mx-3 p-3 d-flex flex-column">
+                <h2><%= stream.title %> </h2>
+                <hr>
+                <p><%= stream.description %></p>
+            
         </div>
-        <div class="video-referencia">
-            <img src="/images/referencia_video.png" alt="video_referencia" class="scale-up-center" >
+        <% }else{ %>
+            <h1 class="badge rounded-pill text-bg-success fs-3">Próxima trasmisión</h1>
+
+            <section class="d-flex justify-content-center">
+                <img class="img-fluid" src="/images/referencia_video.png" alt="">
+
+            </section>
+
+        <% } %>
+       
         </div>
-       <!--Seccion info del stream-->
-       <div class="agregado-stream">
-        <div class="titulo-descripcion-stream">
-        <div class="titulo-stream">
-        <% streams.forEach(({title, description, image}) => { %>
-                
-        <h2><%= title %> </h2>
+    
+       
     </div>
-    <div class="descripcion-stream">
-        <p>
-            <%= description %>
-        </p>
-    </div>
-    <% }) %>
-    </div>
-    <div class="imagen-referencia">
-        <img src="/images/Imagen_del_caso_utv_1_objetivo.png"  />
-    </div>
-       </div>
     </main>
     <%- include('./partials/footer') %>
 </body>

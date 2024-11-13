@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { validationResult } = require("express-validator");
 const Radio = require("../models/Radio.js");
 const User = require("../models/User.js");
@@ -5,8 +6,12 @@ const Stream = require("../models/Stream.js");
 
 module.exports = {
   index: async (req, res) => {
-    const streams = await Stream.find(); 
-    return res.render("home", { streams }); 
+    const stream = await Stream.findOne({
+      radio : process.env.ID_RADIO
+    }); 
+    console.log(stream);
+    
+    return res.render("home", { stream }); 
 },
   about: (req, res) => {
     return res.render("about");
