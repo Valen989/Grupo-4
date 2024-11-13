@@ -2,6 +2,7 @@ const User = require("../models/User.js");
 const Radio = require("../models/Radio.js");
 const { validationResult } = require("express-validator");
 const Stream = require("../models/Stream.js");
+const Record = require("../models/Record.js");
 
 
 module.exports = {
@@ -28,9 +29,14 @@ module.exports = {
     try {
       const stream = await Stream.findOne({
         radio : req.params.radio_id
-      }).populate('radio')
+      }).populate('radio');
+
+      const records = await Record.find({
+        radio : stream.radio
+      })
       return res.render('streams/detail',{
-        stream
+        stream,
+        records
       })
     } catch (error) {
       console.log(error);

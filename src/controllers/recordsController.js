@@ -7,14 +7,25 @@ module.exports = {
     try {
       const radios = await Radio.find({
         user : req.session.userLogin.id
-      })
+      })    
 
-      const records = radios.map( async (r) => {
-          return await Record.find({
-            radio : r.id
-          }).populate("radio");
-      })
+      async function processRadios(radios) {
+        const records = [];
+        
+        for (const r of radios) {
+          try {
+            const record = await Record.find({ radio: r.id }).populate("radio");
+            records.push(...record);
+          } catch (error) {
+            console.error(`Error processing radio ${r.id}:`, error);
+          }
+        }
+      
+        return records;
+      }
 
+      const records = await processRadios(radios);
+    
       return res.render("records/index", {
         records,
       });
