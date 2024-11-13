@@ -5,7 +5,15 @@ const Record = require("../models/Record.js");
 module.exports = {
   index: async (req, res) => {
     try {
-      const records = await Record.find().populate("radio");
+      const radios = await Radio.find({
+        user : req.session.userLogin.id
+      })
+
+      const records = radios.map( async (r) => {
+          return await Record.find({
+            radio : r.id
+          }).populate("radio");
+      })
 
       return res.render("records/index", {
         records,
