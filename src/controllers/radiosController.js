@@ -3,6 +3,7 @@ const { getData, storeData } = require("../data");
 const User = require("../models/User.js");
 const Radio = require("../models/Radio.js");
 const { validationResult } = require("express-validator");
+const Record = require("../models/Record.js");
 const radios = getData("radios.json");
 const radiosOrdered = radios.sort((a, b) =>
   a.name.toLowerCase() > b.name.toLowerCase()
@@ -119,7 +120,21 @@ module.exports = {
     }
    
   },
-  destroy: (req, res) => {
-    return res.send(req.body);
-  },
+  destroy: async (req, res) => {
+    try {
+
+        const radioToDelete = await Radio.findByIdAndDelete(req.params.radio_id)
+
+        if (!radioToDelete) throw new Error('RADIO NOT FOUND');
+
+            await Record.deleteMany({
+                radio: radioToDelete.id
+            })
+        return res.redirect('/radios')
+
+    } catch (error) {
+        console.log(error)
+        return res.redirect('/error')
+    }
+}
 };

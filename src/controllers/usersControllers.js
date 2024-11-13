@@ -18,18 +18,18 @@ const saveUsers = (users) => {
 }
 
 module.exports = {
-    register : (req,res) => {
+    register: (req, res) => {
         return res.render('users/register')
     },
-    processRegister : async (req,res) => {
+    processRegister: async (req, res) => {
 
         try {
             const { username, email, password } = req.body;
 
             const newUser = new User({
-                username : username.trim(),
-                email : email.trim(),
-                password : hashSync(password, 12),
+                username: username.trim(),
+                email: email.trim(),
+                password: hashSync(password, 12),
                 role: "user"
             })
 
@@ -42,33 +42,33 @@ module.exports = {
             return res.redirect('/error')
         }
     },
-    login : (req,res) => {
+    login: (req, res) => {
         return res.render('users/login')
 
     },
     processLogin: async (req, res) => {
 
         try {
-            const {email, password} = req.body;
+            const { email, password } = req.body;
             const user = await User.findOne({
-                email : email.trim()
+                email: email.trim()
             });
 
-            if(user && compareSync(password, user.password)) {
+            if (user && compareSync(password, user.password)) {
                 console.log("Autenticación exitosa");
                 req.session.userLogin = {
-                    id : user.id,
-                    username : user.username,
-                    email : user.email,
-                    rol : user.role
-                    
+                    id: user.id,
+                    username: user.username,
+                    email: user.email,
+                    rol: user.role
+
                 };
-    
+
                 return res.redirect('/admin')
-            }else {
+            } else {
                 console.log("Intento fallido");
-                return res.render('users/login',{
-                    msg : "Credenciales inválidas"
+                return res.render('users/login', {
+                    msg: "Credenciales inválidas"
                 });
             }
 
@@ -76,8 +76,8 @@ module.exports = {
             console.log(error)
             return res.redirect('/error')
         }
-    
-      
+
+
     },
 
     logout: (req, res) => {
@@ -89,36 +89,36 @@ module.exports = {
         });
     },
 
-    profile : (req,res) => {
+    profile: (req, res) => {
         if (!req.session.userLogin) {
             return res.redirect('/users/login');
         }
         res.render('users/profile', { userLogin: req.session.userLogin });
     },
-    destroy : async (req,res) => {
+    destroy: async (req, res) => {
         try {
 
             const userDeleted = await User.findByIdAndDelete(req.params.id)
 
-            if(!userDeleted) throw new Error('USER NOT FOUND');
+            if (!userDeleted) throw new Error('USER NOT FOUND');
 
             const radios = await Radio.find()
 
-            radios.forEach( async (r) => {
+            radios.forEach(async (r) => {
                 await Record.deleteMany({
-                    radio : r.id
+                    radio: r.id
                 })
             })
             await Radio.deleteMany({
-                user : req.params.id
+                user: req.params.id
             })
-            
+
             return res.redirect('/admin')
-            
+
         } catch (error) {
             console.log(error)
             return res.redirect('/error')
         }
     }
-    }
-    
+}
+
