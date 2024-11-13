@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { validationResult } = require("express-validator");
 const Radio = require("../models/Radio.js");
 const Record = require("../models/Record.js");
@@ -36,7 +37,10 @@ module.exports = {
   },
   list: async (req, res) => {
     try {
-      const records = await Record.find().populate("radio");
+      const records = await Record.find({
+        radio : process.env.ID_RADIO
+      }).populate("radio");
+
       return res.render("records/list", {
         records,
       });
