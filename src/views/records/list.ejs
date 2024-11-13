@@ -11,11 +11,13 @@
         <section>
             <h2 class="Titulo2">Grabaciones en vivo</h2>
             <div class="images-container-prox">
-        <% records.forEach(({title, link}) => { %>
+       <% records.forEach(({title, link}) => { %>
             <article>
-                <h2><%= title %></h2>
+                
                 <iframe src="<%= link %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </article>
+               <h4><%= title %></h4>
+            </article> 
+                
         <% }) %>
         
           
@@ -25,15 +27,23 @@
         <section >
             <h2 class="Titulo">Grabaciones anteriores</h2>
           <div class="images-container">
+            <% records.forEach(({title, link}) => { %>
             <article>
-                <iframe width="100%" height="200px" src="https://www.youtube.com/embed/ilMbw2pykoY?si=d5xHB4u76J_8MypT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="100%" height="200px" src="<%= link %>" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h4><%= title %></h4>
             </article>
             <article>
-              <iframe width="100%" height="200px" src="https://www.youtube.com/embed/zlKmG9lNDZQ?si=hK5MiAhakq0OkE6u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </article>
+              <iframe width="100%" height="200px" src="<%= link %>" title="YouTube video player" 
+              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <h4><%= title %></h4>          
+            </article>
           <article>
-              <iframe width="100%" height="200px" src="https://www.youtube.com/embed/9e1-mBm3gYA?si=FFoGl42axhBlDuIW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe width="100%" height="200px" src="<%= link %>" title="YouTube video player" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h4><%= title %></h4>
           </article>
+          <% }) %>
           </div>
          
       </section>
