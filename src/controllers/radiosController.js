@@ -37,6 +37,17 @@ module.exports = {
       radios,
     });
   },
+  detail : async (req,res) =>{
+    try {
+      const radio = await Radio.findById(req.params.radio_id)
+      return res.render('radios/detail',{
+        radio
+      })
+    } catch (error) {
+      console.log(error);
+      return res.redirect("/error");
+    }
+  },
   add: async (req, res) => {
     try {
       const users = await User.find().sort("username");

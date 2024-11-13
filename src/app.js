@@ -53,11 +53,10 @@ const recordsRoutes = require('./routes/records.routes')
 const radiosRoutes = require('./routes/radios.routes')
 const usersRoutes = require('./routes/users.routes')
 const streamsRoutes = require('./routes/streams.routes');
-const checkUserAdmin = require('./middlewares/checkUserAdmin.js');
 
 app.use("/", indexRoutes )
 app.use("/records",  recordsRoutes)
-app.use("/radios", checkUserAdmin, radiosRoutes)
+app.use("/radios", radiosRoutes)
 app.use("/users", usersRoutes)
 app.use("/streams", streamsRoutes)
 

@@ -24,6 +24,19 @@ module.exports = {
   list: (req, res) => {
     return res.render("streams/list");
   },
+  detail : async (req,res) => {
+    try {
+      const stream = await Stream.findOne({
+        radio : req.params.radio_id
+      }).populate('radio')
+      return res.render('streams/detail',{
+        stream
+      })
+    } catch (error) {
+      console.log(error);
+      return res.redirect("/error");
+    }
+  },
   add: async (req, res) => {
     try {
 

@@ -18,7 +18,7 @@
                     </a>
                     <ul class="dropdown-menu bg-success">
                         <% allRadios.forEach(({id, name}) => { %>
-                            <li><a class="dropdown-item" href="#"><%= name %></a></li>
+                            <li><a class="dropdown-item" href="/streams/detail/<%= id %>"><%= name %></a></li>
                         <% }) %>
                     </ul>
                   </div>
