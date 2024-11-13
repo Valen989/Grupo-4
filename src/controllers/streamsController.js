@@ -43,15 +43,15 @@ module.exports = {
   create: async (req, res) => {
 
     const errors = validationResult(req);
-
     try {
       if (errors.isEmpty()) {
-        const { title, link, description, radio} = req.body;
+        const { title, link, description, radio, date} = req.body;
 
-        const newStream = new Radio({
+        const newStream = new Stream({
           title: title.trim(),
           description: description.trim(),
           link: link.trim(),
+          date,
           radio,
           user : req.session.userLogin.id,
         });
