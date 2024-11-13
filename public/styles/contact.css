@@ -11,7 +11,8 @@
         padding: 30px;
         margin: 20px;
         border-radius: 30px;
-        background-color: white;
+        text-align: center;
+
 }
 .container-form h2{
     margin-bottom: 15px;
@@ -70,7 +71,7 @@
 @media (min-width: 768px){ 
     .container-form{
     
-        max-width: 1100px;
+   
         margin: auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -79,7 +80,7 @@
         padding: 30px;
         margin: 20px;
         border-radius: 30px;
-        background-color: white;
+  
     }
 
 .info-form img {
@@ -110,7 +111,8 @@
         padding: 30px;
         margin: 20px;
         border-radius: 30px;
-        background-color: white;
+        margin-right: 150px ;
+        
     }
     .container-form a {
    font-size: 17px;
