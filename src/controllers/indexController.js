@@ -1,11 +1,13 @@
 const { validationResult } = require("express-validator");
 const Radio = require("../models/Radio.js");
 const User = require("../models/User.js");
+const Stream = require("../models/Stream.js");
 
 module.exports = {
-  index: (req, res) => {
-    return res.render("home");
-  },
+  index: async (req, res) => {
+    const streams = await Stream.find(); 
+    return res.render("home", { streams }); 
+},
   about: (req, res) => {
     return res.render("about");
   },

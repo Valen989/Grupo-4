@@ -19,16 +19,16 @@
        <div class="agregado-stream">
         <div class="titulo-descripcion-stream">
         <div class="titulo-stream">
-        <h2>Inclusivamente 18/10 Los campeones de la vida!!! </h3>
+        <% streams.forEach(({title, description, image}) => { %>
+                
+        <h2><%= title %> </h2>
     </div>
     <div class="descripcion-stream">
         <p>
-            Lujo de vierrrrneeesss! Nos visitó Fernando Scabuso (Alfil), Jefe de Operaciones y piloto de la empresa UTV aeroemergencias. Nos cuenta su historia y experiencias desde su corazón. 
-No te pierdas este programón! 
-Te va a encantar! 
-#FundacionEmperador #RadioInclusiva #RadioWox #AccionesQueTransforman #solidaridad #ImpactoSocial #discapacidad #AccionesNoPalabras
+            <%= description %>
         </p>
     </div>
+    <% }) %>
     </div>
     <div class="imagen-referencia">
         <img src="/images/Imagen_del_caso_utv_1_objetivo.png"  />
