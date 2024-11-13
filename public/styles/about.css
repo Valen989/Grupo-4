@@ -6,5 +6,30 @@
     background-color: var(--color-blanco);
     border-radius: 20px;
     margin: 20px;
+    border: solid 3px var(--color-celeste2);
+}
+.div-about {
+    text-align: center;
 }
 
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: double 0.10px var(--color-celeste2);
+    border-radius: 30px;
+}
+
+h1 {
+    font-size: calc(1.375rem + 1.5vw);
+    border-bottom: double 1px var(--color-celeste2);
+    border-radius: 30px; 
+   margin-top: 20px;
+}
+h2{
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+h3{
+    margin-bottom: 30px;
+}
