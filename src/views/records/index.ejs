@@ -20,38 +20,45 @@
                     </div>
                     <hr>
                    <div class="table-responsive">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th scope="col">Nombre</th>
-                          <th scope="col">Fecha</th>
-                          <th scope="col">Link</th>
-                          <th scope="col">Radio</th>
-                          <th scope="col">Acciones</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <% records.forEach(({id, title, date, link, radio}) => { %>
+                    <% if (records.length) { %>
+                      <table class="table">
+                        <thead>
                           <tr>
-
-                          <td><%= title %></td>
-                          <td><%= date %></td>
-                          <td><%= link %></td>
-                          <td><%= radio?.name %></td>
-                          <td>
-                            <div class="d-flex gap-2">
-                              <a href="/records/detail/<%= id %>" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a>
-                              <a href="/records/edit/<%= id %>" class="btn btn-sm btn-success"><i class="fa-solid fa-pencil"></i></a>
-                              <a href="/records/destroy" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></a>
-                          </div>
-                          </td>
-                        </tr>
-
-                        <% }) %>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Link</th>
+                            <th scope="col">Radio</th>
+                            <th scope="col">Acciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% records.forEach(({id, title, date, link, radio}) => { %>
+                            <tr>
+  
+                            <td><%= title %></td>
+                            <td><%= date %></td>
+                            <td><%= link %></td>
+                            <td><%= radio?.name %></td>
+                            <td>
+                              <div class="d-flex gap-2">
+                                <a href="/records/detail/<%= id %>" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a>
+                                <a href="/records/edit/<%= id %>" class="btn btn-sm btn-success"><i class="fa-solid fa-pencil"></i></a>
+                                <a href="/records/destroy" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                            </div>
+                            </td>
+                          </tr>
+  
+                          <% }) %>
+                        
                       
-                    
-                      </tbody>
-                    </table>
+                        </tbody>
+                      </table>
+                    <% }else{ %>
+                      <div class="alert alert-warning">
+                        Aún no hay transmisiones guardadas
+                      </div>
+                    <% } %>
+                 
                    </div>
                 </div>
 

@@ -20,7 +20,8 @@
                     </div>
                     <hr>
                    <div class="table-responsive">
-                    <table class="table">
+                    <% if (streams.length) { %>
+                       <table class="table">
                       <thead>
                         <tr>
                           <th scope="col">Titulo</th>
@@ -52,6 +53,11 @@
                     
                       </tbody>
                     </table>
+                    <% }else{ %>
+                      <div class="alert alert-warning">
+                        Aún no hay streams guardados
+                      </div>
+                    <% } %>
                    </div>
                 </div>
 
