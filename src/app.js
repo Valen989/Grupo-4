@@ -7,6 +7,8 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const morgan = require('morgan');
 
+const { getAll } = require('./services/radio.service.js');
+
 const PORT = process.env.PORT || 3000;
 
 const connectDB = require("./config/connectDB.js");
@@ -40,9 +42,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //manejo de lso recursos estáticos
-app.use(express.static(path.join(__dirname,'..', "public")))
+app.use(express.static(path.join(__dirname,'..', "public")));
+
+app.use(getAll)
 
 
+//Rutas
 const indexRoutes = require('./routes/index.routes')
 const recordsRoutes = require('./routes/records.routes')
 const radiosRoutes = require('./routes/radios.routes')
@@ -50,8 +55,6 @@ const usersRoutes = require('./routes/users.routes')
 const streamsRoutes = require('./routes/streams.routes');
 const checkUserAdmin = require('./middlewares/checkUserAdmin.js');
 
-
-  //Rutas
 app.use("/", indexRoutes )
 app.use("/records",  recordsRoutes)
 app.use("/radios", checkUserAdmin, radiosRoutes)

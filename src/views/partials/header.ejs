@@ -7,13 +7,21 @@
     </div>
     <div class="barra-navegacion">
         <nav>
-
-
             <div class="nav-links">
                 <a href="/">Stream en vivo</a>
                 <a href="/records/list">Grabaciones</a>
                 <a href="/about">Nosotros</a>
                 <a href="/contact">Contactanos</a>
+                <div >
+                    <a type="button" class="text-white" data-bs-toggle="dropdown" aria-expanded="false">
+                     Radios amigas
+                    </a>
+                    <ul class="dropdown-menu bg-success">
+                        <% allRadios.forEach(({id, name}) => { %>
+                            <li><a class="dropdown-item" href="#"><%= name %></a></li>
+                        <% }) %>
+                    </ul>
+                  </div>
             </div>
 
             <% if (userLogin) { %>
