@@ -133,7 +133,16 @@ module.exports = {
       return res.redirect("/error");
     }
   },
-  destroy: (req, res) => {
-    return res.send(req.body);
-  },
+  destroy: async (req, res) => {
+    try {
+      const recordDelete = await Record.findByIdAndDelete(req.params.record_id)
+
+      if (!recordDelete) throw new Error('RECORD NOT FOUND');
+      
+      return res.redirect('/records')
+    }catch (error) {
+      console.log(error)
+      return res.redirect('/error')
+  }
+  }
 };
