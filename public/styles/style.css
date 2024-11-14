@@ -118,8 +118,8 @@ main {
 
 .footer-content {
     display: flex;
-    flex-direction: column; /* Coloca los elementos en columna */
-    align-items: center; /* Centra los elementos horizontalmente */
+    flex-direction: column; 
+    align-items: center;
 }
 
 .redes {
@@ -161,7 +161,13 @@ main {
 }
 
 
-
+.bg-success {
+    background-color: var(--color-celeste) !important; ; 
+    color: white !important; ; 
+    border-radius: 5px!important; ; 
+    padding: 10px!important; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; 
+}
 
 
 /*Tablet*/
@@ -184,8 +190,8 @@ main {
 
 
 .fundacion, .redes, .desarrollo-moncholo {
-    width: 33%; /* Cada elemento ocupa un tercio del espacio */
-    text-align: center; /* Centra el texto dentro de cada elemento */
+    width: 33%; 
+    text-align: center; 
     margin: 0;
 }
 
