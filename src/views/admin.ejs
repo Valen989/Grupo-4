@@ -37,8 +37,19 @@
                                             <td><%= role %></td>
                                             <td>
                                                 <div class="d-flex gap-2">
-                                                    <a href="/users/detail/<%= id %>" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a>
-                                                    <a href="/users/reset" class="btn btn-sm btn-success"><i class="fa-solid fa-key"></i></a>
+                                                    <a href="/users/profile/<%= id %>" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a>
+                                                    
+                                                        <div class="d-flex gap-2">
+                                                            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#userRecoveryModal<%= id %>">
+                                                                <i class="fa-solid fa-key"></i></a>
+                                                            </button>
+                                                            <%- include('./partials/modal-recovery', { 
+                                                                id,
+                                                                route: `/users/recovery/${id}`, // Asegúrate de que esta ruta sea la correcta
+                                                                message: "¿Deseas cambiar el nombre de usuario y/o reiniciar la contraseña?"
+                                                            }) %>
+                                                        </div>
+                                                    
                                                     <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#<%= id %>">
                                                         <i class="fa-solid fa-trash-can"></i>
                                                       </button>
