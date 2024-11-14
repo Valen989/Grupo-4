@@ -37,10 +37,26 @@ module.exports = {
   },
   list: async (req, res) => {
     try {
+      // Obtén el radioId del query string
+      const { radioId } = req.query;
+  
+      // Verifica que se haya proporcionado un radioId
+      if (!radioId) {
+        return res.status(400).send("ID de radio no proporcionado");
+      }
+  
+      // Busca la radio correspondiente al radioId proporcionado
+      const radio = await Radio.findById(radioId);
+  
+      if (!radio) {
+        return res.status(404).send("Radio no encontrada");
+      }
+  
+      // Luego, busca los registros que correspondan a esa radio
       const records = await Record.find({
-        radio : process.env.ID_RADIO
+        radio: radio.id // usa el ID de la radio encontrada
       }).populate("radio");
-
+  
       return res.render("records/list", {
         records,
       });

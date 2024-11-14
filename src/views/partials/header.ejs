@@ -9,7 +9,20 @@
         <nav>
             <div class="nav-links">
                 <a href="/">Stream en vivo</a>
-                <a href="/records/list">Grabaciones</a>
+                <div>
+                    <a type="button" class="text-white" data-bs-toggle="dropdown" aria-expanded="false">
+                        Grabaciones
+                    </a>
+                    <ul class="dropdown-menu bg-success">
+                        <% allRadios.forEach(({ id, name }) => { %>
+                            <li>
+                                <a class="dropdown-item" href="/records/list?radioId=<%= id %>">
+                                    <%= name %>
+                                </a>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </div>
                 <a href="/about">Nosotros</a>
                 <div >
                     <a type="button" class="text-white" data-bs-toggle="dropdown" aria-expanded="false">
