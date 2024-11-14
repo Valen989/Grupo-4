@@ -27,11 +27,12 @@
 
 
 /*Seccion records*/
-h4 {
+.subTittle {
   font-family: "Sriracha", cursive;
     font-weight: 400;
     font-size: 20px;
     font-style: normal;
+    border-bottom: double 3px var(--color-gris-claro);
 }
 
 
