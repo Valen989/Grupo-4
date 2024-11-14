@@ -28,7 +28,6 @@
                           <th scope="col">Radio</th>
                           <th scope="col">Link</th>
                           <th scope="col">Fecha</th>
-                          <th scope="col">Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -39,13 +38,6 @@
                           <td><%= radio?.name %></td>
                           <td><%= link %></td>
                           <td><%= date %></td>
-                          <td>
-                            <div class="d-flex gap-2">
-                              <a href="/records/detail/<%= id %>" class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i></a>
-                              <a href="/records/edit/<%= id %>" class="btn btn-sm btn-success"><i class="fa-solid fa-pencil"></i></a>
-                              <a href="/records/destroy" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></a>
-                          </div>
-                          </td>
                         </tr>
 
                         <% }) %>
