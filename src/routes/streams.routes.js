@@ -15,7 +15,7 @@ router
     .get('/edit/:stream_id',checkUserLogin, edit)
     .put('/update/:stream_id',update)
     .delete('/destroy/:stream_id',destroy)
-
+    
 
 
 module.exports = router
