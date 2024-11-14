@@ -12,24 +12,40 @@
     text-align: center;
 }
 
-p {
+.pAb {
     margin-top: 0;
     margin-bottom: 1rem;
     border-bottom: double 0.10px var(--color-celeste2);
     border-radius: 30px;
+        font-family: "Sriracha", cursive;
+        font-weight: 400;
+        font-style: normal;
+      
+      
 }
 
-h1 {
+.h1Ab {
     font-size: calc(1.375rem + 1.5vw);
     border-bottom: double 1px var(--color-celeste2);
     border-radius: 30px; 
    margin-top: 20px;
+   font-family: "Sriracha", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
-h2{
+.h2Ab{
     margin-bottom: 30px;
     margin-top: 20px;
+    font-family: "Sriracha", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
-h3{
+.h3Ab{
     margin-bottom: 30px;
+    font-family: "Sriracha", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
+
+  
