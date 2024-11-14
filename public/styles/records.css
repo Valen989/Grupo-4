@@ -5,7 +5,10 @@
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: var(--color-blanco);
+  
+  font-family: "Sriracha", cursive;
+    font-weight: 400;
+    font-style: normal;
 
 }
 
@@ -15,19 +18,26 @@
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: var(--color-blanco);
+
+  font-family: "Sriracha", cursive;
+    font-weight: 400;
+    font-style: normal;
 
 }
 
 
 /*Seccion records*/
-
+h4 {
+  font-family: "Sriracha", cursive;
+    font-weight: 400;
+    font-size: 20px;
+    font-style: normal;
+}
 
 
 .images-container {
   
   width: 100%;
-   /*max-width: 370px; /* Ajustado al ancho máximo de la página */
   padding: 0 10px;
   display: flex;
   flex-direction: column;
@@ -105,7 +115,7 @@ iframe {
 
   .images-container-prox {
     width: 100%;
-    max-width: 1200px; /* Ajusta este valor según tus necesidades */
+    max-width: 1200px;
     margin: 0 auto;
 
   }
@@ -114,7 +124,7 @@ iframe {
   }
   .images-container {
     width: 100%;
-    max-width: 1200px; /* Ajusta este valor según tus necesidades */
+    max-width: 1200px; 
     margin: 0 auto;
 }
 

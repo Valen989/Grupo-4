@@ -7,6 +7,10 @@ const userSchema = new mongoose.Schema({
   role: String,
   validated: Boolean,
   token: String,
+  radio: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Radio",
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);

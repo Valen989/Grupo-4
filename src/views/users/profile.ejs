@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head', { title: "Mi Perfil" }) %>
-<body class="perfil-body">
-    <%- include('../partials/header-admin') %>
+<body class="pagina-about">
+    <%- include('../partials/header') %>
     <main>
-        <div class="card-profile">
-        <h1>Mi Perfil</h1>
-        <% if (userLogin) { %>
-            <p>Nombre: <%= userLogin.username %></p>
-            <p>Email: <%= userLogin.email %></p>
-        <% } else { %>
-            <p>No hay datos de usuario disponibles</p>
-        <% } %>
+        <div class="div-about">  
+            <h1 class="h1Ab">Mi Perfil</h1>
+            <div class="profile-container">
+                <% if (userLogin) { %>
+                    <div class="profile-photo">
+                        <img src="/images/default-profile.png" alt="Foto de perfil" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
+                    </div>
+                    <div class="profile-info">
+                        <h2><%= userLogin.username %></h2>
+                        <p><strong>Email:</strong> <%= userLogin.email %></p>
+                        <p><strong>Radio:</strong> <%= userLogin.radio ? userLogin.radio.name : 'No asignada' %></p>
+                    </div>
+                <% } else { %>
+                    <p class="alert alert-warning">No hay datos de usuario disponibles</p>
+                <% } %>
+            </div>
         </div>
     </main>
     <%- include('../partials/footer') %>

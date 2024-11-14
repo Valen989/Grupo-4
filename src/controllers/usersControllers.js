@@ -7,6 +7,7 @@ const { hashSync, compareSync } = require('bcryptjs');
 const Radio = require('../models/Radio.js');
 const Record = require('../models/Record.js');
 
+
 const usersFilePath = path.join(__dirname, '../data/users.json');
 
 const getUsers = () => {
@@ -89,12 +90,31 @@ module.exports = {
         });
     },
 
-    profile: (req, res) => {
-        if (!req.session.userLogin) {
-            return res.redirect('/users/login');
+    profile: async (req, res) => {
+        try {
+            let user;
+    
+            if (req.params.id) {
+                user = await User.findById(req.params.id).populate('radio'); // Asegúrate de que esto esté correcto
+                if (!user) {
+                    return res.status(404).send("Usuario no encontrado");
+                }
+            } else {
+                if (!req.session.userLogin) {
+                    return res.redirect('/users/login');
+                }
+                user = await User.findById(req.session.userLogin.id).populate('radio'); // También hace populate aquí
+            }
+    
+            res.render('users/profile', { userLogin: user });
+        } catch (error) {
+            console.log(error);
+            return res.redirect('/error');
         }
-        res.render('users/profile', { userLogin: req.session.userLogin });
-    },
+    }
+
+
+,
     destroy: async (req, res) => {
         try {
 
@@ -119,6 +139,38 @@ module.exports = {
             console.log(error)
             return res.redirect('/error')
         }
+    },
+    changeUsernameAndResetPassword: async (req, res) => {
+        const { newUsername, newEmail, newPassword } = req.body;
+        const { id } = req.params;
+    
+        try {
+            // Cambiar nombre de usuario
+            if (newUsername) {
+                await User.findByIdAndUpdate(id, { username: newUsername }, { new: true });
+            }
+    
+            // Cambiar correo electrónico
+            if (newEmail) {
+                const existingUser  = await User.findOne({ email: newEmail });
+                if (existingUser ) {
+                    return res.status(400).send("El correo electrónico ya está en uso.");
+                }
+                await User.findByIdAndUpdate(id, { email: newEmail }, { new: true });
+            }
+    
+            // Cambiar contraseña
+            if (newPassword) {
+                const hashedPassword = hashSync(newPassword, 10); // Aquí se usa hashSync
+                await User.findByIdAndUpdate(id, { password: hashedPassword }, { new: true });
+            }
+    
+            res.redirect("/users/profile");
+        } catch (error) {
+            console.log(error);
+            res.redirect("/error");
+        }
     }
+
 }
 
