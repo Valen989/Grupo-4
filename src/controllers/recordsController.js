@@ -37,34 +37,26 @@ module.exports = {
   },
   list: async (req, res) => {
     try {
-      // Obtén el radioId del query string
-      const { radioId } = req.query;
-  
-      // Verifica que se haya proporcionado un radioId
-      if (!radioId) {
-        return res.status(400).send("ID de radio no proporcionado");
-      }
-  
-      // Busca la radio correspondiente al radioId proporcionado
-      const radio = await Radio.findById(radioId);
-  
-      if (!radio) {
-        return res.status(404).send("Radio no encontrada");
-      }
-  
-      // Luego, busca los registros que correspondan a esa radio
-      const records = await Record.find({
-        radio: radio.id // usa el ID de la radio encontrada
-      }).populate("radio");
-  
-      return res.render("records/list", {
-        records,
-      });
+   
+        const radio = await Radio.findOne({ name: 'Inclusivamente' });
+
+       
+        if (!radio) {
+            return res.status(404).send("Radio 'Inclusivamente' no encontrada");
+        }
+
+       
+        const records = await Record.find({ radio: radio._id }).populate("radio");
+
+     
+        return res.render("records/list", {
+            records,
+        });
     } catch (error) {
-      console.log(error);
-      return res.redirect("/error");
+        console.log(error);
+        return res.redirect("/error");
     }
-  },
+},
   add: async (req, res) => {
     try {
       const radios = await Radio.find({
@@ -141,7 +133,16 @@ module.exports = {
       return res.redirect("/error");
     }
   },
-  destroy: (req, res) => {
-    return res.send(req.body);
-  },
+  destroy: async (req, res) => {
+    try {
+      const recordDelete = await Record.findByIdAndDelete(req.params.record_id)
+
+      if (!recordDelete) throw new Error('RECORD NOT FOUND');
+      
+      return res.redirect('/records')
+    }catch (error) {
+      console.log(error)
+      return res.redirect('/error')
+  }
+  }
 };
