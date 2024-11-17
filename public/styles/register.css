@@ -15,6 +15,9 @@
     height: 100px;
     margin: 3px;
 }
+.container-register{
+    text-align: center;
+}
 .container {
     background: white;
     padding: 6px;
