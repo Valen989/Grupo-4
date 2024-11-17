@@ -27,21 +27,35 @@ module.exports = {
   },
   detail : async (req,res) => {
     try {
-      const stream = await Stream.findOne({
+
+      const stream = await Stream.find(
+        {
         radio : req.params.radio_id
-      }).populate('radio');
+      },
+      {
+        _id: 0,
+        title: 1,
+        link: 1,
+        description :1
+      },
+      {
+        sort: { _id: -1 }
+      }
+    ).limit(1).populate('radio');
 
       const records = await Record.find({
-        radio : stream.radio
+        radio : stream[0].radio
       })
+
       return res.render('streams/detail',{
-        stream,
+        stream : stream[0],
         records
       })
     } catch (error) {
       console.log(error);
       return res.redirect("/error");
     }
+
   },
   add: async (req, res) => {
     try {

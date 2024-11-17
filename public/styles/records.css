@@ -133,5 +133,24 @@ iframe {
   width: 0 auto;
 }
 
+.frame{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 10%;
+  margin-left: -5px;
+
+}
+
+.titulo-frame{
+  display: inline-flex;
+
+}
+
+.description-frame{
+  display: inline-flex;
+  text-align: center;
+}
+
 
 }

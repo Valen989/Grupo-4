@@ -49,7 +49,7 @@ app.use(getAll)
 
 //Rutas
 const indexRoutes = require('./routes/index.routes')
-const recordsRoutes = require('./routes/records.routes')
+const recordsRoutes = require('./routes/records.routes.js')
 const radiosRoutes = require('./routes/radios.routes')
 const usersRoutes = require('./routes/users.routes')
 const streamsRoutes = require('./routes/streams.routes');
