@@ -17,6 +17,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital,wght@0,1..1000;1,1..1000&family=Sriracha&display=swap');
 
 /*Seccion header*/
+.none{
+    display: none;
+}
 .pagina-grabaciones {
 margin: 0;}
 
@@ -79,6 +82,12 @@ main {
     padding: 15px 0;
     border-top: 1px solid #000000;
     border-bottom: 1px solid #000000;
+   
+        position: relative; /* Necesario para que el z-index funcione */
+        z-index: 9000; /* Un valor alto para que esté por encima */
+        background-color: #15B6B8; /* Color de fondo de la barra de navegación */
+        
+    
     
 
 }
@@ -160,14 +169,16 @@ main {
     color: var(--color-blanco);
 }
 
-
-.bg-success {
-    background-color: var(--color-celeste) !important; ; 
-    color: white !important; ; 
-    border-radius: 5px!important; ; 
-    padding: 10px!important; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; 
+.dropdown-menu.bg-success {
+    background-color: var(--color-celeste) !important;  /* Color de fondo del menú */
+    color: white !important; /* Color del texto */
+    border-radius: 5px !important; /* Bordes redondeados */
+    padding: 10px !important; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* Sombra */
+    margin-top: 10px !important; /* Margen superior para evitar superposición con la barra de navegación */
+    z-index: 1000 !important; /* Asegúrate de que esté por encima de otros elementos */
 }
+
 
 
 /*Tablet*/
