@@ -1,15 +1,18 @@
 
 /*Subtittles*/
 
-.Titulo2{
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+.Titulo2 {
+  padding: 10px;
+  display: inline-flex;
   
+  justify-content: center;
   font-family: "Sriracha", cursive;
-    font-weight: 400;
-    font-style: normal;
-
+  font-weight: 400;
+  border: double 4px var(--color-celeste2);
+  border-radius: 20px;
+  font-style: normal;
+  border-bottom: double 3px var(--color-gris-claro);
+  background-color: white;
 }
 
 
@@ -24,7 +27,9 @@
     font-style: normal;
 
 }
-
+.containerTitle {
+  text-align: center;
+}
 
 /*Seccion records*/
 .subTittle {
