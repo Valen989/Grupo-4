@@ -1,0 +1,21 @@
+<div class="modal fade" id="<%= id %>" tabindex="-1" aria-labelledby="<%= id %>Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="<%= id %>Label"><%= date %></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-bodyDetail">
+                <div class="titulo-frame">
+                   <h3 class="detail-title"><%= title %></h3> 
+                </div>
+                <div class="frame-detail">
+                    <iframe src="<%= link %>" title="<%= title %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="description-frame">
+                    <p class="centrar-modalText"><%= description %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

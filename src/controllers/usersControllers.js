@@ -95,7 +95,7 @@ module.exports = {
             let user;
     
             if (req.params.id) {
-                user = await User.findById(req.params.id).populate('radio'); // Asegúrate de que esto esté correcto
+                user = await User.findById(req.params.id).populate('radio');
                 if (!user) {
                     return res.status(404).send("Usuario no encontrado");
                 }
@@ -103,7 +103,7 @@ module.exports = {
                 if (!req.session.userLogin) {
                     return res.redirect('/users/login');
                 }
-                user = await User.findById(req.session.userLogin.id).populate('radio'); // También hace populate aquí
+                user = await User.findById(req.session.userLogin.id).populate('radio'); 
             }
     
             res.render('users/profile', { userLogin: user });
