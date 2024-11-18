@@ -1,0 +1,17 @@
+.centrar-modalText {
+   padding-bottom: 20px;
+    display: inline-flex;
+ 
+}
+
+.modal-bodyDetail {
+    text-align: center;
+}
+
+.detail-title {
+    padding-top: 20px;
+}
+
+.frame-detail{
+    padding: 20px;
+}

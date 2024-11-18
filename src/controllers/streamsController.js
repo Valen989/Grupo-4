@@ -7,21 +7,18 @@ const Record = require("../models/Record.js");
 
 module.exports = {
   index: async (req, res) => {
-
     try {
-
-      const streams = await Stream.find().populate('radio').populate('user')      
-
-      return res.render("streams/index", {
-        streams,
-      });
-      
+        // Obtener los streams del usuario actualmente logueado
+        const streams = await Stream.find({ user: req.session.userLogin.id }).populate('radio');
+        
+        return res.render("streams/index", {
+            streams,
+        });
     } catch (error) {
-      console.log(error);
-      return res.redirect("/error");
+        console.log(error);
+        return res.redirect("/error");
     }
-   
-  },
+},
   list: (req, res) => {
     return res.render("streams/list");
   },
