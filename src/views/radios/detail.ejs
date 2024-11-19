@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head', {
+        title : "Home"
+    }) %>
+<body class="body-home">
+    <!--Cabezera-->
+    <%- include('../partials/header') %>
+    <main class="card mx-4">
+        <div class="card-body">
+        <h1 class="badge rounded-pill text-bg-success fs-3">Radio <%= stream.radio.name %> trasmitiendo en vivo</h1>
+        <% if (stream) { %>
+            <section class="d-flex justify-content-center">
+                <iframe width="100%" height="600" src="<%= stream.link %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </section>
+          
+           <div class="agregado-stream card mx-3 p-3 d-flex flex-column">
+                <h2><%= stream.title %> </h2>
+                <hr>
+                <p><%= stream.description %></p>
+            
+        </div>
+        <% }else{ %>
+            <div class="alert alert-warning">
+                No hay stream
+            </div>
+
+        <% } %>
+        <div class="card-body row mx-4">
+            <% records.forEach(({id, title, description, link}) => { %>
+                <div class="col-12 col-md-4">
+                    <div class="card">
+                        <iframe  class="card-img-top" width="100%" height="180" src="<%= link %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="card-body">
+                          <h5 class="card-title"><%= title %></h5>
+                          <p class="card-text"><%= description %></p>
+                        </div>
+                      </div>
+                </div>
+            <% }) %>
+        
+
+        </div>
+        </div>
+    
+       
+    </div>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

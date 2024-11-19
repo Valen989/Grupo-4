@@ -149,13 +149,15 @@ iframe {
 
 .titulo-frame{
   display: inline-flex;
+  
 
 }
 
 .description-frame{
   display: inline-flex;
-  text-align: center;
+  
 }
+
 
 
 }

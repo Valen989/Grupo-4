@@ -4,7 +4,7 @@ const router = express.Router();
 const {list, add, create, edit, update, destroy, index, detail} = require('../controllers/radiosController');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 const checkUserAdmin = require('../middlewares/checkUserAdmin');
-
+const radiosController = require('../controllers/radiosController')
 
 //radios
 router
