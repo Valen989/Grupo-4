@@ -30,12 +30,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <% streams.forEach(({ id, title, date, link, radio, description }) => { %>
+                            <% streams.forEach(({ id, title, date, link, radio, description,image }) => { %>
                             <tr>
                                 <td><%= title %></td>
                                 <td><%= radio?.name %></td>
                                 <td><%= link %></td>
                                 <td><%= date %></td>
+                                
                                 <td>
                                     <div class="d-flex gap-2">
                                    
@@ -43,7 +44,7 @@
                                             <i class="fa-solid fa-eye"></i>
                                         </button>
                                        
-                                        <%- include('../partials/modal-detail', { id, title, link, description, date }) %>
+                                        <%- include('../partials/modal-detail', { id, title, link, description, date,image }) %>
                                     </div>
                                 </td>
                             </tr>
