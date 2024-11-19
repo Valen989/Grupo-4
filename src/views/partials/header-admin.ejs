@@ -11,10 +11,37 @@
                             <% } %>
                         <a href="/records">Trasmisiones</a>
                     </div>
-                    <a href="/users/profile" class="login-link">
+                    <a href="#" class="login-link" data-bs-toggle="modal" data-bs-target="#modal-profile">
                         <img class="login-icons" src="/icons/profile-icon.png" alt="icon-user">
                         <span>Mi Perfil</span>
                     </a>
+                        <!-- Modal para mostrar el perfil del usuario -->
+<div class="modal fade" id="modal-profile" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="profileModalLabel">Mi Perfil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="profile-container">
+                    <div class="profile-photo">
+                        <img src="/images/default-profile.png" alt="Foto de perfil" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
+                    </div>
+                    <div class="profile-info">
+                        <h2><%= userLogin.username %></h2>
+                        <p><strong>Email:</strong> <%= userLogin.email %></p>
+                        <p><strong>Radio:</strong> <%= userLogin.radio ? userLogin.radio.name : 'No asignada' %></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+                    
                     <a href="/users/logout" class="login-link">
                         <img class="login-icons" src="/icons/logout-icon.png" alt="icon-logout">
                         <span>Cerrar Sesión</span>
