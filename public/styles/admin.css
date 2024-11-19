@@ -2,3 +2,23 @@
     display: flex;
     justify-content: center;
 }
+ 
+    
+
+
+
+@media (min-width: 1024px){
+.union-perfil-cerrar {
+    display: inline-flex;
+
+    margin-right: 30px;
+
+}
+.adminAndLog{
+    display: inline-flex;
+
+    margin-right: 30px;
+
+}
+
+}
