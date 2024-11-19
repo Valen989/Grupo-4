@@ -1,8 +1,9 @@
 const User = require("../models/User.js");
 const Radio = require("../models/Radio.js");
-const { validationResult } = require("express-validator");
+const { validationResult, Result } = require("express-validator");
 const Stream = require("../models/Stream.js");
 const Record = require("../models/Record.js");
+const result = require("./uploadController.js");
 
 
 module.exports = {
@@ -75,7 +76,7 @@ module.exports = {
     const errors = validationResult(req);
     try {
       if (errors.isEmpty()) {
-        const { title, link, description, radio, date} = req.body;
+        const { title, link, description, radio, date, } = req.body;
 
         const newStream = new Stream({
           title: title.trim(),
@@ -83,6 +84,7 @@ module.exports = {
           link: link.trim(),
           date,
           radio,
+          image: result.secure_url,
           user : req.session.userLogin.id,
         });
 
@@ -142,3 +144,5 @@ module.exports = {
     return res.send(req.body);
   },
 };
+
+
