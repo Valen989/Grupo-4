@@ -5,6 +5,7 @@ const Radio = require("../models/Radio.js");
 const { validationResult } = require("express-validator");
 const Record = require("../models/Record.js");
 const radios = getData("radios.json");
+const Stream = require("../models/Stream.js");
 const radiosOrdered = radios.sort((a, b) =>
   a.name.toLowerCase() > b.name.toLowerCase()
     ? 1
@@ -37,17 +38,32 @@ module.exports = {
       radios,
     });
   },
-  detail : async (req,res) =>{
+  detail: async (req, res) => {
     try {
-      const radio = await Radio.findById(req.params.radio_id)
-      return res.render('radios/detail',{
-        radio
-      })
+        const radioId = req.params.id; // Asegúrate de que estás usando 'id' como parámetro
+        console.log("Radio ID:", radioId); // Log para depuración
+
+        // Validar si radioId está definido
+        if (!radioId) {
+            return res.status(400).send("ID de radio no proporcionado");
+        }
+
+        // Busca el stream en vivo asociado a la radio
+        const stream = await Stream.findOne({ radio: radioId }).sort({ date: -1 });
+        console.log("Stream encontrado:", stream); // Log para depuración
+
+        if (!stream) {
+            return res.status(404).send("No hay stream en vivo disponible para esta radio");
+        }
+
+        // Redirige a la URL del stream en vivo
+        return res.redirect(`/streams/detail/${stream._id}`);
     } catch (error) {
-      console.log(error);
-      return res.redirect("/error");
+        console.error("Error en el controlador detail:", error);
+        return res.redirect("/error");
     }
-  },
+},
+
   add: async (req, res) => {
     try {
       const users = await User.find().sort("username");
